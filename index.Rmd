@@ -3,7 +3,7 @@ title: "Yannik Buhl"
 image: "frank.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://www.linkedin.com/in/yannik-buhl-a29034156"
   - label: Twitter
     url: "https://twitter.com/YBuhl"
   - label: GitHub
@@ -15,27 +15,44 @@ output:
   postcards::trestles
 ---
  
-## Bio
+## Biographie
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+Mein Name ist Yannik Buhl, ich bin Wissenschaftlicher Mitarbeiter beim Statistischen Bundesamt in Wiesbaden, im Bereich Erforschung neuer digitaler Daten. Davor habe ich als Datenjournalist und Wirtschaftsredakteur in Stuttgart gearbeitet.
 
-## Education
+Mein Interesse gilt hauptsächlich den Schnittstellen zwischen Gesellschaft, Politik und Wirtschaft, speziell zwischen Sozial- und Wirtschaftswissenschaft sowie deren Interaktion mit den Medien. In der Politikwissenschaft gilt meine Leidenschaft dem Zusammenspiel Vergleichender Regierungslehre und Politischer Soziologie/Psychologie – sowie dem politischen System Schottlands. Methodisch interessiere ich mich sehr für die Themen Automatisierung, Umfragedaten und statistische Modellierung.
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+Zu guter Letzt engagiere ich mich mit Freude bei der Non-Profit-Initiative [CorrelAid](http://www.correlaid.org/) für Datenanalysen zum guten Zweck. Im März 2019 haben wir dort beispielsweise unser erstes Open-Source-Package für R auf CRAN veröffentlicht, das ich mitentwickelt habe: [*{newsanchor}*](https://github.com/CorrelAid/newsanchor) (mehr Infos [hier](https://correlaid.org/blog/newsanchor/)). Im November 2020 ist außerdem auf CRAN das R-Paket [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) hinzugekommen, das ich ebenfalls mitentwickelt habe und das ein Wrapper für die API von [Pocket](https://getpocket.com/) ist.
 
-Ph.D. in Computer Science | September 2009 - May 2014
+Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl meiner Fotos ist auf meinem [Instagram-Account](https://www.instagram.com/yabuhl/) zu sehen.
 
-**The University of California, Berkeley** | Berkeley, CA
+### Software & Programmieren (1 bis 5)
 
-B.S. in Computer Science | September 2005 - May 2009
+- R/R Studio: 4⁄5
+- Git/GitHub: 3⁄5
+- Python/Jupyter: 3⁄5
+- HTML/CSS: 2⁄5
+- Bash/Linux: 2⁄5
+- SQL: 2⁄5
+- Sonstiges: Stata (2⁄5), Markdown (3⁄5), Docker (1⁄5)
 
-## Experience
+### Quantitative Methoden (1 bis 5)
 
-**Google Brain** | Principal Investigator | January 2018 - Present
+- Multivariate Verfahren: 4⁄5
+- Machine Learning: 2⁄5
 
-**Netflix** | Research Scientist | June 2014 - December 2017
+### Interessen
+
+- Datenanalyse, Datenjournalismus
+- Politik, Wirtschaft & Gesellschaft
+- R/RStudio & quantitative Methoden
+- Vergleichende Regierungslehre / Politische Soziologie
+
+### Ausbildung
+
+**Universität Mannheim** 
+
+M.A. Political Science | 2017
+
+**Universität Mannheim** 
+
+B.A. Politikwissenschaft | 2014
