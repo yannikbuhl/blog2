@@ -1,2 +1,6 @@
-title: "Blog"
-listing: posts
+---
+title: "mfeo"
+description: |
+    Welcome to the website. I hope you enjoy it!
+site: distill::distill_article
+---

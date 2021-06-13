@@ -1,7 +1,7 @@
 name: "yannikbuhl.de"
-title: "yannikbuhl.de"
+title: "Y. Buhl"
 description: |
-  Yannik Buhl
+  yannikbuhl.de
 output_dir: "_site"
 navbar:
   search: false
