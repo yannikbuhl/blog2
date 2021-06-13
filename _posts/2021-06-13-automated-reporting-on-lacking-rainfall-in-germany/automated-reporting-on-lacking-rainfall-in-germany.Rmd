@@ -9,6 +9,8 @@ date: 06-13-2021
 output:
   distill::distill_article:
     self_contained: false
+    highlight: breezedark
+    highlight_downlit: false
 ---
 
 Climate change causes severe disturbances in what we used to call a more or less stable climate. Germany, just as many other countries around the globe, suffers from an increasing lack of rainfall, which in turn causes situations close to what is called a draught. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. When I used to work as an Editor at [Stuttgarter Zeitung](www.stuttgarter-zeitung.de), I contributed to this journalistic goal by writing and automating a script that would help us tell the readers which region of Baden-Württemberg, Germany, has suffered from the longest absence of rainfall. 
@@ -42,11 +44,11 @@ For an analysis on rainfall, we need to extract those stations that measure it:
 niederschlag <- stationen$stations_id[stationen$niederschlag == 1]
 ```
 
-In case you want to automate this script, create a folder where you want to store the data that the {rdwd} package downloads (this example stems from my Raspberry Pi where the script is automated and the folder is created using the RAM to avoid using the memory disk):
+In case you want to automate this script, create a folder where you want to store the data that the {rdwd} package downloads:
 
 ```{r}
 # Check if folder for zip data exists & create it if necessary
-if (dir.exists("/run/user/1000/wetter") == FALSE) {dir.create("/run/user/1000/wetter")}
+if (dir.exists(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter")) == FALSE) {dir.create(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"))}
 ```
 
 After these initial steps, we can start to download and process recent rainfall data from all stations involved. I download the data on a daily resolution first. Doing so, we can simply count the days since the last rainfall:
@@ -61,7 +63,7 @@ download <- rdwd::selectDWD(id = niederschlag,
 
 # Download actual zip files and extract data as lists
 res1 <- rdwd::dataDWD(url = download, 
-                      dir = "/run/user/1000/wetter", 
+                      dir = here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"), 
                       force = TRUE, 
                       quiet = TRUE, 
                       overwrite = TRUE)
@@ -81,8 +83,8 @@ results <- res2 %>% group_by(STATIONS_ID) %>%
   mutate(time = format(time, format = "%d.%m.%Y"))
 
 # Check if folder with zip files exists and delete if present
-if (dir.exists("/run/user/1000/wetter") == TRUE) {
-      unlink("/run/user/1000/wetter", recursive = TRUE)
+if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == TRUE) {
+      unlink("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter", recursive = TRUE)
 }
 
 ```
@@ -96,11 +98,11 @@ recent1 <- rdwd::selectDWD(id = niederschlag,
                            var = "precipitation", 
                            per = "now")
 
-if (dir.exists("/run/user/1000/wetter") == FALSE) {dir.create("/run/user/1000/wetter")}
+if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == FALSE) {dir.create("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter")}
 
 # Download actual zip files and extract data as lists
 recent2 <- rdwd::dataDWD(url = recent1, 
-                         dir = "/run/user/1000/wetter", 
+                         dir = here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"), 
                          force = TRUE, 
                          quiet = TRUE, 
                          overwrite = TRUE)
@@ -154,8 +156,8 @@ results2 <- inner_join(results, stationen2, by = "stations_id") %>%
          `Letzter Niederschlag` = time,
          `Stationshöhe (Meter)` = stationshoehe)
 
-if (dir.exists("/run/user/1000/wetter") == TRUE) {
-  unlink("/run/user/1000/wetter", recursive = TRUE)
+if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == TRUE) {
+  unlink("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter", recursive = TRUE)
 }
 
 ```
