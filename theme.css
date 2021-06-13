@@ -37,7 +37,7 @@ html {
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    0.6rem;
-  --heading-color:   rgba(255, 255, 255, 0.8);
+  --heading-color:   #4fe34f;
   --body-size:       1.06rem;
   --body-color:      rgba(255, 255, 255, 0.8);
 }
@@ -115,4 +115,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .sourceCode {
   background-color: #445063;
+  width: auto;
 }
+
+.d-article {
+  color: rgba(255, 255, 255, 0.8);
+} 
