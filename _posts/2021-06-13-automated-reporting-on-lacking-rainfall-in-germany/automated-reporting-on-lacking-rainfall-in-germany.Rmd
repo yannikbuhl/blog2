@@ -1,0 +1,195 @@
+---
+title: "Automated Reporting on Lacking Rainfall in Germany"
+description: |
+  Climate change causes severe disturbances in what we used to call a more or less stable climate.
+author:
+  - name: Yannik
+    url: yannikbuhl.de
+date: 06-13-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Climate change causes severe disturbances in what we used to call a more or less stable climate. Germany, just as many other countries around the globe, suffers from an increasing lack of rainfall, which in turn causes situations close to what is called a draught. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. When I used to work as an Editor at [Stuttgarter Zeitung](www.stuttgarter-zeitung.de), I contributed to this journalistic goal by writing and automating a script that would help us tell the readers which region of Baden-Württemberg, Germany, has suffered from the longest absence of rainfall. 
+
+It is a more or less easy way of automating reports on the climate's effects on our weather. In the following, I demonstrate how my script looks like. The data come from the German National Weather Service (*DWD, Deutscher Wetterdienst*).
+
+First, what you need is a bunch of packages:
+
+```{r}
+library(pacman)
+pacman::p_load(rdwd, magrittr, dplyr, here, bit64, lubridate, readxl, purrr, backports, remotes)
+```
+
+```{r, eval = FALSE}
+remotes::install_github("munichrocker/DatawRappr")
+library(DatawRappr)
+```
+
+Second, you need a list of all the DWD stations (including their IDs) that provide the desired measures (in this case, amount of rainfall, but this could also be temperature, etc.):
+
+```{r}
+# Get stations
+stationen <- readxl::read_excel(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/stationen_bw.xlsx"))
+head(stationen)
+```
+
+For an analysis on rainfall, we need to extract those stations that measure it:
+
+```{r}
+# Get all stations
+niederschlag <- stationen$stations_id[stationen$niederschlag == 1]
+```
+
+In case you want to automate this script, create a folder where you want to store the data that the {rdwd} package downloads (this example stems from my Raspberry Pi where the script is automated and the folder is created using the RAM to avoid using the memory disk):
+
+```{r}
+# Check if folder for zip data exists & create it if necessary
+if (dir.exists("/run/user/1000/wetter") == FALSE) {dir.create("/run/user/1000/wetter")}
+```
+
+After these initial steps, we can start to download and process recent rainfall data from all stations involved. I download the data on a daily resolution first. Doing so, we can simply count the days since the last rainfall:
+
+```{r}
+# Get URLs for DWD zip files
+download <- rdwd::selectDWD(id = niederschlag, 
+                            res = "daily", 
+                            outvec = TRUE, 
+                            var = "more_precip", 
+                            per = "recent")
+
+# Download actual zip files and extract data as lists
+res1 <- rdwd::dataDWD(url = download, 
+                      dir = "/run/user/1000/wetter", 
+                      force = TRUE, 
+                      quiet = TRUE, 
+                      overwrite = TRUE)
+
+# Create general data frame from all lists
+res1 %>% purrr::map_dfr(as.data.frame) -> res2
+res2 %>% filter(MESS_DATUM > as.POSIXct("2020-01-01")) -> res2
+
+# Process and find last day of niederschlag
+results <- res2 %>% group_by(STATIONS_ID) %>% 
+  mutate(MESS_DATUM = as.POSIXct(MESS_DATUM)) %>% 
+  filter(RS > 0) %>% 
+  summarise(niederschlag = last(RS), time = last(MESS_DATUM)) %>% 
+  mutate(days = as.integer(Sys.Date() - as.Date(time))) %>% 
+  arrange(desc(days)) %>% 
+  rename(stations_id = STATIONS_ID) %>% 
+  mutate(time = format(time, format = "%d.%m.%Y"))
+
+# Check if folder with zip files exists and delete if present
+if (dir.exists("/run/user/1000/wetter") == TRUE) {
+      unlink("/run/user/1000/wetter", recursive = TRUE)
+}
+
+```
+
+What is necessary now is to check whether there has been rainfall on this present day. If so, we have to set the counter of days without rain to 0:
+
+```{r}
+recent1 <- rdwd::selectDWD(id = niederschlag, 
+                           res = "10_minutes", 
+                           outvec = TRUE, 
+                           var = "precipitation", 
+                           per = "now")
+
+if (dir.exists("/run/user/1000/wetter") == FALSE) {dir.create("/run/user/1000/wetter")}
+
+# Download actual zip files and extract data as lists
+recent2 <- rdwd::dataDWD(url = recent1, 
+                         dir = "/run/user/1000/wetter", 
+                         force = TRUE, 
+                         quiet = TRUE, 
+                         overwrite = TRUE)
+
+# Create general data frame from all lists
+recent2 %>% purrr::map_dfr(as.data.frame) -> recent3
+
+# Delete unused columns and delete all data before yesterday to prevent errors
+recent3 %>% filter(MESS_DATUM > Sys.Date() - 1) %>% 
+  dplyr::select(STATIONS_ID, MESS_DATUM, RWS_10) -> recent3
+
+# Wrangle data frame with weather data to get last value
+plausible <- recent3 %>% group_by(STATIONS_ID) %>% 
+  summarise(sum = sum(RWS_10)) %>% 
+  filter(sum > 0)
+
+if (sum(results$stations_id %in% plausible$STATIONS_ID) != 0) {
+  
+  for (i in seq_along(plausible$STATIONS_ID)) {
+    
+    id <- plausible$STATIONS_ID[i]
+    
+    results$time[results$stations_id == id] <- format(Sys.Date(), format = "%d.%m.%Y")
+    results$days[results$stations_id == id] <- 0
+    results$niederschlag[results$stations_id == id] <- plausible$sum[plausible$STATIONS_ID == id]
+    
+    rm(id)
+    
+  }
+  
+}
+
+results <- results %>% arrange(desc(days))
+results_regen <- results %>% arrange(desc(niederschlag))
+
+```
+
+What is left now is to create the final data set:
+
+```{r}
+# Get names and station information
+stationen2 <- stationen %>% filter(niederschlag == 1) %>% select(-lufttemperatur, -niederschlag, -wind)
+
+# Join weather dataset with stations dataset to get stations' names
+results2 <- inner_join(results, stationen2, by = "stations_id") %>% 
+  select(stationsname, days, niederschlag, time, stationshoehe) %>% 
+  mutate(days = paste(days, "Tag/en")) %>% 
+  rename(Station = stationsname, 
+         `Letzter Niederschlag vor` = days,
+         `Niederschlag (in Litern)` = niederschlag,
+         `Letzter Niederschlag` = time,
+         `Stationshöhe (Meter)` = stationshoehe)
+
+if (dir.exists("/run/user/1000/wetter") == TRUE) {
+  unlink("/run/user/1000/wetter", recursive = TRUE)
+}
+
+```
+
+The result looks like this:
+
+```{r}
+head(results2)
+```
+
+As a data journalist, I sent these data to a [Datawrapper](https://developer.datawrapper.de/docs) chart (which is essentially a table) that displays all weather stations involved, the days since the last rainfall and the amount of rainfall the last time it rained:
+
+```{r eval = FALSE}
+# Capture output which tells the URL of the chart
+capture.output(dw_data_to_chart(x = results2, chart_id = "abcdef"), file = "/dev/null")
+
+## Send data to datawrapper
+log <- capture.output(dw_publish_chart(chart_id = "abcdef"))
+
+```
+
+On a side note, my R script triggers a python script on my Raspberry Pi if an error occurred and no valid URL was put out; the script will send an E-mail notifying me of the error:
+
+```{r eval = FALSE}
+# If there was no valid URL in the output, trigger python script.
+if (grepl(pattern = "https://datawrapper.dwcdn.net/lxpOi", log[6]) == FALSE) {
+
+	system("python3 ~Documents/scripts/duerre.py")
+
+} else {
+
+	print(paste0(log[6], " //// ", Sys.time()))
+
+}
+```
+
+This whole script runs on my Raspberry Pi 3 using a Cronjob.
