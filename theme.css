@@ -99,8 +99,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #4fe34f;
 }
 
-p {
+/*p {
   
   --text-color: rgba(255, 255, 255, 0.8);
   
+} */
+
+.btn-outline-dark {
+  
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
+  
 }
+
