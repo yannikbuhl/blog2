@@ -25,7 +25,7 @@ Zu guter Letzt engagiere ich mich mit Freude bei der Non-Profit-Initiative [Corr
 
 Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl meiner Fotos ist auf meinem [Instagram-Account](https://www.instagram.com/yabuhl/) zu sehen.
 
-#### Software & Programmieren (1 bis 5)
+##### Software & Programmieren (1 bis 5)
 
 - R/R Studio: 4 / 5
 - Git/GitHub: 3 / 5
@@ -35,19 +35,19 @@ Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl mein
 - SQL: 2 / 5
 - Sonstiges: Stata (2 / 5), Markdown (3 / 5), Docker (1 / 5)
 
-#### Quantitative Methoden (1 bis 5)
+##### Quantitative Methoden (1 bis 5)
 
 - Multivariate Verfahren: 4 / 5
 - Machine Learning: 2 / 5
 
-#### Interessen
+##### Interessen
 
 - Datenanalyse, Datenjournalismus
 - Politik, Wirtschaft & Gesellschaft
 - R/RStudio & quantitative Methoden
 - Vergleichende Regierungslehre / Politische Soziologie
 
-#### Ausbildung
+##### Ausbildung
 
 **Universität Mannheim** 
 
