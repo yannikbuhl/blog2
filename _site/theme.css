@@ -80,6 +80,11 @@ d-appendix {
   background-color: #4fe34f;
 }
 
+.d-title h1 {
+  
+  --text-color: #4fe34f;
+  
+}
 
 a {
   color: #4fe34f;
