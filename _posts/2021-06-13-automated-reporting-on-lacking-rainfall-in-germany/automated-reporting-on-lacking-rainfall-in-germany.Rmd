@@ -1,7 +1,7 @@
 ---
 title: "Automated Reporting on Lacking Rainfall in Germany"
 description: |
-  Climate change causes severe disturbances in what we used to call a more or less stable climate.
+  Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so.
 author:
   - name: Yannik
     url: yannikbuhl.de

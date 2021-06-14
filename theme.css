@@ -22,7 +22,7 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     rgba(255, 255, 255, 0.8);
+  --title-color:     #4fe34f;
   --header-color:    rgba(255, 255, 255, 0.8); /* #222831; */
   --body-color:      rgba(255, 255, 255, 0.8); 
   --aside-color:     rgba(255, 255, 255, 0.8); /* rgba(0, 0, 0, 0.6); */ 
@@ -122,3 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 .d-article {
   color: rgba(255, 255, 255, 0.8);
 } 
+
+.d-title h1 {
+  --text-color: #4fe34f;
+}
