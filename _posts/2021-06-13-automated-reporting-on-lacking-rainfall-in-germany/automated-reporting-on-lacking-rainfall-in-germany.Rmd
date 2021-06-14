@@ -21,7 +21,8 @@ First, what you need is a bunch of packages:
 
 ```{r}
 library(pacman)
-pacman::p_load(rdwd, magrittr, dplyr, here, bit64, lubridate, readxl, purrr, backports, remotes)
+pacman::p_load(rdwd, magrittr, dplyr, here, bit64, lubridate, 
+               readxl, purrr, backports, remotes)
 ```
 
 ```{r, eval = FALSE}
@@ -32,8 +33,11 @@ library(DatawRappr)
 Second, you need a list of all the DWD stations (including their IDs) that provide the desired measures (in this case, amount of rainfall, but this could also be temperature, etc.):
 
 ```{r}
+# Set path
+path <- "_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"
+
 # Get stations
-stationen <- readxl::read_excel(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/stationen_bw.xlsx"))
+stationen <- readxl::read_excel(here::here(path, "stationen_bw.xlsx"))
 head(stationen)
 ```
 
@@ -48,7 +52,8 @@ In case you want to automate this script, create a folder where you want to stor
 
 ```{r}
 # Check if folder for zip data exists & create it if necessary
-if (dir.exists(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter")) == FALSE) {dir.create(here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"))}
+if (dir.exists(here::here(path, "wetter")) == FALSE) {
+  dir.create(here::here(path, "wetter"))}
 ```
 
 After these initial steps, we can start to download and process recent rainfall data from all stations involved. I download the data on a daily resolution first. Doing so, we can simply count the days since the last rainfall:
@@ -63,7 +68,7 @@ download <- rdwd::selectDWD(id = niederschlag,
 
 # Download actual zip files and extract data as lists
 res1 <- rdwd::dataDWD(url = download, 
-                      dir = here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"), 
+                      dir = here::here(path, "wetter"), 
                       force = TRUE, 
                       quiet = TRUE, 
                       overwrite = TRUE)
@@ -83,8 +88,8 @@ results <- res2 %>% group_by(STATIONS_ID) %>%
   mutate(time = format(time, format = "%d.%m.%Y"))
 
 # Check if folder with zip files exists and delete if present
-if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == TRUE) {
-      unlink("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter", recursive = TRUE)
+if (dir.exists(here::here(path, "wetter")) == TRUE) {
+      unlink(here::here(path, "wetter"), recursive = TRUE)
 }
 
 ```
@@ -98,11 +103,12 @@ recent1 <- rdwd::selectDWD(id = niederschlag,
                            var = "precipitation", 
                            per = "now")
 
-if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == FALSE) {dir.create("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter")}
+if (dir.exists(here::here(path, "wetter")) == FALSE) {
+  dir.create(here::here(path, "wetter"))}
 
 # Download actual zip files and extract data as lists
 recent2 <- rdwd::dataDWD(url = recent1, 
-                         dir = here::here("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter"), 
+                         dir = here::here(path, "wetter"), 
                          force = TRUE, 
                          quiet = TRUE, 
                          overwrite = TRUE)
@@ -125,9 +131,13 @@ if (sum(results$stations_id %in% plausible$STATIONS_ID) != 0) {
     
     id <- plausible$STATIONS_ID[i]
     
-    results$time[results$stations_id == id] <- format(Sys.Date(), format = "%d.%m.%Y")
+    results$time[results$stations_id == id] <- 
+      format(Sys.Date(), format = "%d.%m.%Y")
+    
     results$days[results$stations_id == id] <- 0
-    results$niederschlag[results$stations_id == id] <- plausible$sum[plausible$STATIONS_ID == id]
+    
+    results$niederschlag[results$stations_id == id] <- 
+      plausible$sum[plausible$STATIONS_ID == id]
     
     rm(id)
     
@@ -144,7 +154,8 @@ What is left now is to create the final data set:
 
 ```{r}
 # Get names and station information
-stationen2 <- stationen %>% filter(niederschlag == 1) %>% select(-lufttemperatur, -niederschlag, -wind)
+stationen2 <- stationen %>% filter(niederschlag == 1) %>% 
+  select(-lufttemperatur, -niederschlag, -wind)
 
 # Join weather dataset with stations dataset to get stations' names
 results2 <- inner_join(results, stationen2, by = "stations_id") %>% 
@@ -156,8 +167,8 @@ results2 <- inner_join(results, stationen2, by = "stations_id") %>%
          `Letzter Niederschlag` = time,
          `Stationshöhe (Meter)` = stationshoehe)
 
-if (dir.exists("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter") == TRUE) {
-  unlink("_posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/wetter", recursive = TRUE)
+if (dir.exists(here::here(path, "wetter")) == TRUE) {
+  unlink(here::here(path, "wetter"), recursive = TRUE)
 }
 
 ```
@@ -172,7 +183,8 @@ As a data journalist, I sent these data to a [Datawrapper](https://developer.dat
 
 ```{r eval = FALSE}
 # Capture output which tells the URL of the chart
-capture.output(dw_data_to_chart(x = results2, chart_id = "abcdef"), file = "/dev/null")
+capture.output(dw_data_to_chart(x = results2, chart_id = "abcdef"), 
+               file = "/dev/null")
 
 ## Send data to datawrapper
 log <- capture.output(dw_publish_chart(chart_id = "abcdef"))

@@ -29,7 +29,7 @@ html {
   --fig-cap-color:   rgba(255, 255, 255, 0.8);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    Palatino, "Palatino Linotype", Georgia, serif;
-  --mono-font:       Palatino, "Palatino Linotype", Georgia, serif;
+  --mono-font:       "Fira Code", monospace;
   --body-font:       Palatino, "Palatino Linotype", Georgia, serif;
   --navbar-font:     Palatino, "Palatino Linotype", Georgia, serif;  /* websites + blogs only */
 }
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sourceCode {
   background-color: #445063;
-  width: auto;
+  /*width: auto; */
   font-family: "Fira Code", monospace;
 }
 
