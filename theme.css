@@ -28,10 +28,10 @@ html {
   --aside-color:     rgba(255, 255, 255, 0.8); /* rgba(0, 0, 0, 0.6); */ 
   --fig-cap-color:   rgba(255, 255, 255, 0.8);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
-  --heading-font:    "Palatino Linotype", serif;
-  --mono-font:       "Palatino Linotype", serif;
-  --body-font:       "Palatino Linotype", serif;
-  --navbar-font:     "Palatino Linotype", serif;  /* websites + blogs only */
+  --heading-font:    Palatino, "Palatino Linotype", Georgia, serif;
+  --mono-font:       Palatino, "Palatino Linotype", Georgia, serif;
+  --body-font:       Palatino, "Palatino Linotype", Georgia, serif;
+  --navbar-font:     Palatino, "Palatino Linotype", Georgia, serif;  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
