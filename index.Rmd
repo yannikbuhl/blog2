@@ -1,6 +1,6 @@
 ---
 title: "Y. Buhl"
-image: "yannik.jpg"
+image: "images/yannik.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/yannik-buhl-a29034156"
