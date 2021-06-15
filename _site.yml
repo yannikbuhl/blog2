@@ -4,6 +4,8 @@ description: |
   yannikbuhl.de
 output_dir: "_site"
 navbar:
+  logo:
+    image: 'icon-192.png'
   search: false
   right:
     - text: "About"
