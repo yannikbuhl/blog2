@@ -1877,7 +1877,7 @@ d-appendix {
 html {
   /*-- Main font sizes --*/
   --title-size:      35px;
-  --body-size:       1.06rem;
+  --body-size:       1.15rem;
   --code-size:       14px;
   --aside-size:      12px;
   --fig-cap-size:    13px;
@@ -2377,12 +2377,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 <pre><code># A tibble: 6 x 5
   Station     `Letzter Niedersch… `Niederschlag (in… `Letzter Nieders…
   &lt;chr&gt;       &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt;            
-1 Dietenheim  7 Tag/en                           4   07.06.2021       
-2 Ihringen    6 Tag/en                          13.9 08.06.2021       
-3 Konstanz    6 Tag/en                          20.7 08.06.2021       
-4 Stuttgart … 6 Tag/en                           0.7 08.06.2021       
-5 Aulendorf-… 6 Tag/en                           0.8 08.06.2021       
-6 Baden-Bade… 5 Tag/en                           2.1 09.06.2021       
+1 Dietenheim  8 Tag/en                           4   07.06.2021       
+2 Ihringen    7 Tag/en                          13.9 08.06.2021       
+3 Konstanz    7 Tag/en                          20.7 08.06.2021       
+4 Stuttgart … 7 Tag/en                           0.7 08.06.2021       
+5 Aulendorf-… 7 Tag/en                           0.8 08.06.2021       
+6 Baden-Bade… 6 Tag/en                           2.1 09.06.2021       
 # … with 1 more variable: Stationshöhe (Meter) &lt;dbl&gt;</code></pre>
 </div>
 <p>As a data journalist, I sent these data to a <a href="https://developer.datawrapper.de/docs">Datawrapper</a> chart (which is essentially a table) that displays all weather stations involved, the days since the last rainfall and the amount of rainfall the last time it rained:</p>
@@ -2397,7 +2397,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>On a side note, my R script triggers a python script on my Raspberry Pi if an error occurred and no valid URL was put out; the script will send an E-mail notifying me of the error:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If there was no valid URL in the output, trigger python script.</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">&quot;https://datawrapper.dwcdn.net/lxpOi&quot;</span>, log[<span class="dv">6</span>]) <span class="sc">==</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">&quot;https://datawrapper.dwcdn.net/abcdef&quot;</span>, log[<span class="dv">6</span>]) <span class="sc">==</span> <span class="cn">FALSE</span>) {</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">system</span>(<span class="st">&quot;python3 ~Documents/scripts/duerre.py&quot;</span>)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>

@@ -195,7 +195,7 @@ On a side note, my R script triggers a python script on my Raspberry Pi if an er
 
 ```{r eval = FALSE}
 # If there was no valid URL in the output, trigger python script.
-if (grepl(pattern = "https://datawrapper.dwcdn.net/lxpOi", log[6]) == FALSE) {
+if (grepl(pattern = "https://datawrapper.dwcdn.net/abcdef", log[6]) == FALSE) {
 
 	system("python3 ~Documents/scripts/duerre.py")
 
