@@ -72,11 +72,6 @@ d-appendix {
   font-weight: bold;
 }
 
-.posts-list .metadata {
-  font-size: 16pxrem;
-  
-}
-
 .distill-site-footer {
   --text-color:       #4fe34f;
   --text-size:        13px;
@@ -142,8 +137,10 @@ code {
 
 .publishedDate {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
 }
 
 .dt-author {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
 }
