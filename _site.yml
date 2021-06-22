@@ -8,7 +8,7 @@ navbar:
     image: images/icon-192.png
   search: false
   right:
-    - text: "About"
+    - text: "Über mich"
       href: index.html
     - text: "Blog"
       href: blog.html
