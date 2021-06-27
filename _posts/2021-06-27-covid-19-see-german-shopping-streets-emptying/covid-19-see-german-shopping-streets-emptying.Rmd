@@ -5,7 +5,7 @@ description: |
 author:
   - name: Yannik
     url: yannikbuhl.de
-date: 28-03-2020
+date: 03-28-2020
 output:
   distill::distill_article:
     self_contained: false
@@ -38,15 +38,21 @@ df2 <- read.csv(here::here(path, "stuttgart-königstraße-mitte-2019.csv"),
                 sep = ";", 
                 stringsAsFactors = FALSE)
 
+rm(path)
+
+```
+
+```{r wrangling_2}
 # Some data preparation
 df1 <- df1 %>% mutate(time_of_measurement = as.POSIXct(time_of_measurement),
                date = lubridate::as_date(time_of_measurement),
                time = lubridate::ceiling_date(time_of_measurement, unit = "hours"))
+
 df2 <- df2 %>% mutate(time_of_measurement = as.POSIXct(time_of_measurement),
                date = lubridate::as_date(time_of_measurement),
                time = lubridate::ceiling_date(time_of_measurement, unit = "hours"))
 
-rm(path)
+
 ```
 
 After doing so, the data set looks like this:
