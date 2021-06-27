@@ -1,0 +1,97 @@
+---
+title: "Scraping Spiegel articles using {newsanchor}"
+description: |
+  One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.
+author:
+  - name: Yannik
+    url: yannikbuhl.de
+date: 01-27-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+Almost a year ago, we (a team at [CorrelAid](www.correlaid.org)) published our first open source package for R on CRAN: **{newsanchor}**. It queries the API of [newsapi.org](newsapi.org) and allows you to easily download the articles relating to your search query of a range of popular international news outlets. Results include a variety of meta data, the URLs as well as (depending on whether you have a paid plan or not) parts of the article content. You can find all information needed reading its [vignette](https://cran.r-project.org/web/packages/newsanchor/vignettes/usage-newsanchor.html). I also wrote an introductory blog post which you can find [here](https://yannikbuhl.netlify.com/post/introducing-the-r-newsanchor-package/). 
+
+One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs. It is fairly easy to build a scraper upon that. *Here, I have to mention that vast parts of the following code stem from [Jan Dix](https://github.com/jandix) who, like me, co-authored the package.* He wrote a scraper for the New York Times, it was originally to be included as a vignette of **{newsanchor}** (it had to be removed because of dependecy trouble, though). What I did was to build on his code and add another example for the popular German news magazine [Spiegel](www.spiegel.de). 
+
+*[Note: There is code for a progress bar in the following chunk. It is commented out so the R-Markdown output would be easier to read]*
+
+
+```{r code}
+# Load packages required
+library(newsanchor) # download newspaper articles
+library(robotstxt)  # get robots.txt
+library(httr)       # http requests
+suppressMessages(library(rvest))      # web scraping tools
+suppressMessages(library(dplyr))      # easy data frame manipulation
+library(stringr)    # string/character manipulation 
+# Get headlines published by SPON using newsanchor (example)
+response <- get_everything_all(query   = "Merkel",
+                                 sources = "spiegel-online",
+                                 from    = Sys.Date() - 3,
+                                 to      = Sys.Date())
+  
+# Extract response data frame
+articles <- response$results_df
+
+# Check robots.txt if scraping is OK
+suppressMessages(allowed <- paths_allowed(articles$url))
+all(allowed)
+
+# Define parsing function
+get_article_body <- function (url) {
+  
+  # Download article page
+  response <- GET(url)
+  
+  # Check if request was successful
+  if (response$status_code != 200) return(NA)
+  
+  # Extract HTML
+  html <- content(x        = response, 
+                  type     = "text", 
+                  encoding = "UTF-8")
+  
+  # Parse html
+  parsed_html <- read_html(html)                   
+  
+  # Define paragraph DOM selector
+  selector <- "div.clearfix p"
+  
+  # Parse content
+  parsed_html %>% 
+    html_nodes(selector) %>%      # extract all paragraphs within class 'article-section'
+    html_text() %>%               # extract content of the <p> tags
+    str_replace_all("\n", "") %>% # replace all line breaks
+    paste(collapse = " ")         # join all paragraphs into one string
+}
+
+# Apply function to all URLs
+# Create new text column
+articles$body <- NA
+# Initialize progress bar
+# pb <- txtProgressBar(min     = 1, 
+#                      max     = nrow(articles), 
+#                      initial = 1, 
+#                      style   = 3)
+
+# Loop through articles and apply function
+for (i in 1:nrow(articles)) {
+  
+  # Apply function to i in URLS
+  articles$body[i] <- get_article_body(articles$url[i])
+  
+  ## Update progress bar
+  # setTxtProgressBar(pb, i)
+  
+  # Sleep for 1 sec
+  Sys.sleep(1)
+}
+```
+
+Based on the articles' content, you can, for example, compute sentiment analyses. Jan shows you how to do that for the New York Times in what was formerly our vignette [here](https://github.com/CorrelAid/newsanchor/blob/master/examples/scrape-nyt.Rmd). I hope this is useful for some of you. 

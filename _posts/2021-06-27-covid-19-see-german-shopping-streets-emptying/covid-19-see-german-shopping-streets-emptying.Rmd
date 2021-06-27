@@ -2,7 +2,6 @@
 title: "Covid-19 - See German shopping streets emptying"
 description: |
   The coronavirus is halting public live. Looking at pedestrian data shows how persistently people stay away from German city centres and give an estimate of the situation is for shops in city centres.
-preview: false
 author:
   - name: Yannik
     url: yannikbuhl.de
@@ -65,7 +64,7 @@ head(df1, n = 5)
 
 The first thing I am interested in is the long-term perspective. First restrictions on public life have been announced by the federal government on March 17th (red line in the figure below), further restrictions followed on March 23rd (blue line in the figure below). The second figure shows a comparable time span from 2019. This way, we can (if only slightly) control for seasonal effects, too. That second time span of 2019 serves as a benchmark for how the number of pedestrians would have developed if the coronavirus restrictions would not have hit. I scaled the y axis equally to a maximum of 15,000 pedestrians per hour to spot the difference more easily.
 
-```{r plots}
+```{r plots, preview = FALSE}
 df1 %>% filter(date >= "2020-03-01") %>% group_by(time) %>% 
   summarise(n = sum(counted_pedestrians)) %>%
  ggplot(aes(x = time, y = n)) + 
@@ -103,7 +102,7 @@ df2 %>% group_by(date) %>%
 
 As a last analysis, I want to focus on the weekends, unsurprisingly the days with most pedestrians in the city centres. This last figure basically speaks for itself. I compare two weekends end of March, 2020 versus 2019. It is evident 1) how many people stayed home (as long as they did not meet up in any other place instead) and 2) how many potential customers the city centre shops are missing every day (and especially Saturday) that they have to remain closed. 
 
-```{r secondplots}
+```{r secondplots, preview = FALSE}
 time1 <- seq.POSIXt(as.POSIXct("2020-03-20 00:00:00"), 
                     as.POSIXct("2020-03-23 00:00:00"), by = "hour")
 
