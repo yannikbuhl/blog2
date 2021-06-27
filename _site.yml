@@ -3,6 +3,9 @@ title: "Y. Buhl"
 description: |
   yannikbuhl.de
 output_dir: "_site"
+citation: false
+base_url: yannikbuhl.de
+favicon: images/favicon.ico
 navbar:
   logo:
     image: images/icon-192.png

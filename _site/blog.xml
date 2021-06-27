@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Y. Buhl</title>
+    <link>yannikbuhl.de</link>
+    <atom:link href="yannikbuhl.de/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>yannikbuhl.de
+</description>
+    <image>
+      <title>Y. Buhl</title>
+      <url>yannikbuhl.de/images/favicon.ico</url>
+      <link>yannikbuhl.de</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Sun, 13 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Automated Reporting on Lacking Rainfall in Germany</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany</link>
+      <description>Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so.</description>
+      <guid>yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany</guid>
+      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Covid-19 - See German shopping streets emptying</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-27-covid-19-see-german-shopping-streets-emptying</link>
+      <description>The coronavirus is halting public live. Looking at pedestrian data shows how persistently people stay away from German city centres and give an estimate of the situation is for shops in city centres.</description>
+      <guid>yannikbuhl.de/posts/2021-06-27-covid-19-see-german-shopping-streets-emptying</guid>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      <media:content url="yannikbuhl.de/posts/2021-06-27-covid-19-see-german-shopping-streets-emptying/covid-19-see-german-shopping-streets-emptying_files/figure-html5/plots-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Scraping Spiegel articles using {newsanchor}</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-27-scraping-spiegel-articles-using-newsanchor</link>
+      <description>One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.</description>
+      <guid>yannikbuhl.de/posts/2021-06-27-scraping-spiegel-articles-using-newsanchor</guid>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automatically filling a SQLite database using AWS and RStudio Server</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-23-automatically-filling-a-sqlite-database-using-aws-and-rstudio-server</link>
+      <description>The R script used is a simple parser. To automate it, set up a SQLite database on AWS. The script parses a JSON file and writes it into the database using SQL.</description>
+      <guid>yannikbuhl.de/posts/2021-06-23-automatically-filling-a-sqlite-database-using-aws-and-rstudio-server</guid>
+      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the R {newsanchor} package</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-22-introducing-the-r-newsanchor-package</link>
+      <description>At CorrelAid, we developed a tool for communication scientists, journalists and data scientists alike. It conveniently helps you to access breaking news and articles from over 30,000 news sources and blogs using newsapi.org.</description>
+      <guid>yannikbuhl.de/posts/2021-06-22-introducing-the-r-newsanchor-package</guid>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Voting Behaviour in the 2014 Scottish Independence Referendum</title>
+      <dc:creator>Yannik</dc:creator>
+      <link>yannikbuhl.de/posts/2021-06-27-voting-behaviour-in-the-2014-scottish-independence-referendum</link>
+      <description>I investigated the voting behaviour of the Scottish electorate in the 2014 Scottish independence referendum. More precisely, I was the first attempting to explain voting behaviour in the referendum based on a multivariate quantitative approach.</description>
+      <guid>yannikbuhl.de/posts/2021-06-27-voting-behaviour-in-the-2014-scottish-independence-referendum</guid>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

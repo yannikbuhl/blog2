@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>yannikbuhl.de/blog.html</loc>
+    <lastmod>2021-06-13T19:53:15+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/</loc>
+    <lastmod>2021-06-27T22:16:16+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/</loc>
+    <lastmod>2021-06-15T19:53:30+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-27-covid-19-see-german-shopping-streets-emptying/</loc>
+    <lastmod>2021-06-27T21:49:40+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-27-scraping-spiegel-articles-using-newsanchor/</loc>
+    <lastmod>2021-06-27T22:04:20+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-23-automatically-filling-a-sqlite-database-using-aws-and-rstudio-server/</loc>
+    <lastmod>2021-06-23T00:16:10+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-22-introducing-the-r-newsanchor-package/</loc>
+    <lastmod>2021-06-23T00:16:38+02:00</lastmod>
+  </url>
+  <url>
+    <loc>yannikbuhl.de/posts/2021-06-27-voting-behaviour-in-the-2014-scottish-independence-referendum/</loc>
+    <lastmod>2021-06-27T21:57:59+02:00</lastmod>
+  </url>
+</urlset>

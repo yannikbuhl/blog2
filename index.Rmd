@@ -27,13 +27,13 @@ Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl mein
 
 ##### Software & Programmieren
 
-- R/R Studio: 4 / 5
-- Git/GitHub: 3 / 5
-- Python/Jupyter: 3 / 5
-- HTML/CSS: 2 / 5
-- Bash/Linux: 3 / 5
-- SQL: 2 / 5
-- Sonstiges: Stata (2 / 5), Markdown (3 / 5), Docker (1 / 5)
+- R/R Studio: 4/5
+- Git/GitHub: 3/5
+- Python/Jupyter: 3/5
+- HTML/CSS: 2/5
+- Bash/Linux: 3/5
+- SQL: 2/5
+- Sonstiges: Markdown (3/5), Docker (1/5)
 
 ##### Quantitative Methoden
 
