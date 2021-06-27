@@ -2,6 +2,7 @@
 title: "Covid-19 - See German shopping streets emptying"
 description: |
   The coronavirus is halting public live. Looking at pedestrian data shows how persistently people stay away from German city centres and give an estimate of the situation is for shops in city centres.
+preview: false
 author:
   - name: Yannik
     url: yannikbuhl.de
