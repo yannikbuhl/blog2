@@ -22,10 +22,10 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     #4fe34f;
-  --header-color:    #4fe34f; /* #222831; */
+  --title-color:     #97ff33;
+  --header-color:    #97ff33; /* #222831; */
   --body-color:      rgba(255, 255, 255, 0.8); 
-  --aside-color:     rgba(255, 255, 255, 0.8); /* rgba(0, 0, 0, 0.6); */ 
+  --aside-color:     #97ff33; /* rgba(0, 0, 0, 0.6); */ 
   --fig-cap-color:   rgba(255, 255, 255, 0.8);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    Palatino, "Palatino Linotype", Georgia, serif;
@@ -37,7 +37,7 @@ html {
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    1.05rem;
-  --heading-color:   #4fe34f;
+  --heading-color:   #97ff33;
   --body-size:       1.1rem;
   --body-color:      rgba(255, 255, 255, 0.8);
   color: rgba(255, 255, 255, 0.8);
@@ -52,7 +52,7 @@ d-byline {
 /*-- ARTICLE APPENDIX --*/
 d-appendix {
   --heading-size:    15px;
-  --heading-color:   #4fe34f;
+  --heading-color:   #97ff33;
   --text-size:       0.8em;
   --text-color:      rgba(255, 255, 255, 0.8);
 }
@@ -62,9 +62,9 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       1.2em;
-  --text-color:       #4fe34f;
+  --text-color:       #97ff33;
   --text-size:        20px;
-  --hover-color:      white;
+  --hover-color:      #ffb733;
   --bkgd-color:       #070707; /* #30475e */
 }
 
@@ -73,26 +73,26 @@ d-appendix {
 }
 
 .distill-site-footer {
-  --text-color:       #4fe34f;
+  --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        13px;
-  --hover-color:      white;
+  --hover-color:      #ffb733;
   --bkgd-color:       #070707;
 }
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 .btn-outline-dark:hover {
-  background-color: #4fe34f;
+  background-color: #ffb733;
 }
 
 .d-title h1 {
   
-  --text-color: #4fe34f;
+  --text-color: #97ff33;
   
 }
 
 a {
-  color: #4fe34f;
+  color: #97ff33;
 }
 
 body {
@@ -102,13 +102,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #4fe34f;
+  color: #97ff33;
 }
 
 .btn-outline-dark {
   
   color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: hsla(231, 15%, 18%, 1);
   
 }
 
@@ -118,9 +118,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Code", monospace;
 }
 
-.d-article {
-  color: rgba(255, 255, 255, 0.8);
+d-article a {
+  color: #97ff33;
 } 
+
+a:hover {
+  color: #ffb733;
+}
 
 code {
   color: rgba(255, 255, 255, 0.8);

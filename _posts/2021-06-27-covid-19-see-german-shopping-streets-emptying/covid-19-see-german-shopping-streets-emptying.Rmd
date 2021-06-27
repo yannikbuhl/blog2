@@ -6,9 +6,11 @@ author:
   - name: Yannik
     url: yannikbuhl.de
 date: 03-28-2020
+# preview: images/yannik.jpg
 output:
   distill::distill_article:
     self_contained: false
+
 ---
 
 The coronavirus is halting public live all over the world. So, many of the patterns of data regarding flight departures or traffic that we see these days are, objectively speaking, unsurprising.  As of now, most of us are coping well with the situation and stay at home, as is recommended. As a result, the public sphere is emptying. Right now, this is a strategy that I support. However, it is hitting the economy harder than one might think. This is especially true for the small shops in the city centres. Most of them have been forced to close. 

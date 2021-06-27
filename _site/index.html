@@ -473,10 +473,10 @@
             --aside-size:      12px;
             --fig-cap-size:    13px;
             /*-- Main font colors --*/
-            --title-color:     #4fe34f;
-            --header-color:    #4fe34f; /* #222831; */
+            --title-color:     #97ff33;
+            --header-color:    #97ff33; /* #222831; */
             --body-color:      rgba(255, 255, 255, 0.8); 
-            --aside-color:     rgba(255, 255, 255, 0.8); /* rgba(0, 0, 0, 0.6); */ 
+            --aside-color:     #97ff33; /* rgba(0, 0, 0, 0.6); */ 
             --fig-cap-color:   rgba(255, 255, 255, 0.8);
             /*-- Specify custom fonts ~~~ must be imported above   --*/
             --heading-font:    Palatino, "Palatino Linotype", Georgia, serif;
@@ -488,7 +488,7 @@
           /*-- ARTICLE METADATA --*/
           d-byline {
             --heading-size:    1.05rem;
-            --heading-color:   #4fe34f;
+            --heading-color:   #97ff33;
             --body-size:       1.1rem;
             --body-color:      rgba(255, 255, 255, 0.8);
             color: rgba(255, 255, 255, 0.8);
@@ -503,7 +503,7 @@
           /*-- ARTICLE APPENDIX --*/
           d-appendix {
             --heading-size:    15px;
-            --heading-color:   #4fe34f;
+            --heading-color:   #97ff33;
             --text-size:       0.8em;
             --text-color:      rgba(255, 255, 255, 0.8);
           }
@@ -513,9 +513,9 @@
 
           .distill-site-header {
             --title-size:       1.2em;
-            --text-color:       #4fe34f;
+            --text-color:       #97ff33;
             --text-size:        20px;
-            --hover-color:      white;
+            --hover-color:      #ffb733;
             --bkgd-color:       #070707; /* #30475e */
           }
 
@@ -524,26 +524,26 @@
           }
 
           .distill-site-footer {
-            --text-color:       #4fe34f;
+            --text-color:       rgba(255, 255, 255, 0.8);
             --text-size:        13px;
-            --hover-color:      white;
+            --hover-color:      #ffb733;
             --bkgd-color:       #070707;
           }
 
           /*-- Additional custom styles --*/
           /* Add any additional CSS rules below                      */
           .btn-outline-dark:hover {
-            background-color: #4fe34f;
+            background-color: #ffb733;
           }
 
           .d-title h1 {
             
-            --text-color: #4fe34f;
+            --text-color: #97ff33;
             
           }
 
           a {
-            color: #4fe34f;
+            color: #97ff33;
           }
 
           body {
@@ -553,13 +553,13 @@
           }
 
           h1, h2, h3, h4, h5, h6 {
-            color: #4fe34f;
+            color: #97ff33;
           }
 
           .btn-outline-dark {
             
             color: rgba(255, 255, 255, 0.8);
-            border-color: rgba(255, 255, 255, 0.8);
+            border-color: hsla(231, 15%, 18%, 1);
             
           }
 
@@ -569,9 +569,13 @@
             font-family: "Fira Code", monospace;
           }
 
-          .d-article {
-            color: rgba(255, 255, 255, 0.8);
+          d-article a {
+            color: #97ff33;
           } 
+
+          a:hover {
+            color: #ffb733;
+          }
 
           code {
             color: rgba(255, 255, 255, 0.8);
@@ -792,30 +796,30 @@
               <div id="icon-list">
                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                    <a href=https://www.linkedin.com/in/yannik-buhl-a29034156>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        LinkedIn
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
                     <a href=https://twitter.com/YBuhl>
                       <button type="button" class="btn btn-outline-dark mb-2">
-                        Twitter
+                        <img src="images/twitter.png">
                       </button>
                     </a>
                   </li>
                                     <li class="list-inline-item">
                     <a href=https://github.com/yannikbuhl>
                       <button type="button" class="btn btn-outline-dark mb-2">
-                        GitHub
+                        <img src="images/github.png">
                       </button>
                     </a>
                   </li>
                                     <li class="list-inline-item">
                     <a href=mailto:buhl-netlify@posteo.de>
                       <button type="button" class="btn btn-outline-dark mb-2">
-                        Email
+                        <img src="images/mail.png">
+                      </button>
+                    </a>
+                  </li>
+                                    <li class="list-inline-item">
+                    <a href=https://www.linkedin.com/in/yannik-buhl-a29034156>
+                      <button type="button" class="btn btn-outline-dark mb-2">
+                        <img src="images/linkedin.png">
                       </button>
                     </a>
                   </li>
@@ -848,8 +852,8 @@
             <div id="quantitative-methoden" class="section level5">
             <h5>Quantitative Methoden</h5>
             <ul>
-            <li>Multivariate Verfahren: 4 / 5</li>
-            <li>Machine Learning: 2 / 5</li>
+            <li>Multivariate Verfahren: 4/5</li>
+            <li>Machine Learning: 2/5</li>
             </ul>
             </div>
             <div id="interessen" class="section level5">
@@ -887,24 +891,24 @@
             <div class="row justify-content-center align-items-center">
               <div class="col-8 p-1 text-center">
                 <div class="list-group">
-                                    <a href=https://www.linkedin.com/in/yannik-buhl-a29034156>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      LinkedIn
-                    </button>
-                  </a>
                                     <a href=https://twitter.com/YBuhl>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Twitter
+                      <img src="images/twitter.png">
                     </button>
                   </a>
                                     <a href=https://github.com/yannikbuhl>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      GitHub
+                      <img src="images/github.png">
                     </button>
                   </a>
                                     <a href=mailto:buhl-netlify@posteo.de>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Email
+                      <img src="images/mail.png">
+                    </button>
+                  </a>
+                                    <a href=https://www.linkedin.com/in/yannik-buhl-a29034156>
+                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                      <img src="images/linkedin.png">
                     </button>
                   </a>
                                   </div>
@@ -932,8 +936,8 @@
               <div id="quantitative-methoden" class="section level5">
               <h5>Quantitative Methoden</h5>
               <ul>
-              <li>Multivariate Verfahren: 4 / 5</li>
-              <li>Machine Learning: 2 / 5</li>
+              <li>Multivariate Verfahren: 4/5</li>
+              <li>Machine Learning: 2/5</li>
               </ul>
               </div>
               <div id="interessen" class="section level5">

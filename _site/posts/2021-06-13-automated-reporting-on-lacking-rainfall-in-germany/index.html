@@ -89,8 +89,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 
 <meta property="description" itemprop="description" content="Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so."/>
 
-<link rel="canonical" href="yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"/>
-<link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon.ico"/>
+<link rel="icon" type="image/png" href="../../images/icon-192.png"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-06-13"/>
@@ -101,7 +100,6 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <meta property="og:title" content="Y. Buhl: Automated Reporting on Lacking Rainfall in Germany"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so."/>
-<meta property="og:url" content="yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Y. Buhl"/>
 
@@ -109,19 +107,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="Y. Buhl: Automated Reporting on Lacking Rainfall in Germany"/>
 <meta property="twitter:description" content="Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so."/>
-<meta property="twitter:url" content="yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"/>
 
-<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Y. Buhl: Automated Reporting on Lacking Rainfall in Germany"/>
-<meta name="citation_fulltext_html_url" content="yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"/>
-<meta name="citation_online_date" content="2021/06/13"/>
-<meta name="citation_publication_date" content="2021/06/13"/>
-<meta name="citation_author" content="Yannik"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Automated Reporting on Lacking Rainfall in Germany"]},{"type":"character","attributes":{},"value":["Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["06-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","highlight","highlight_downlit"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["espresso"]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"]},{"type":"character","attributes":{},"value":["yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Automated Reporting on Lacking Rainfall in Germany"]},{"type":"character","attributes":{},"value":["Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["06-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","highlight","highlight_downlit"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["espresso"]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1892,10 +1883,10 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     #4fe34f;
-  --header-color:    #4fe34f; /* #222831; */
+  --title-color:     #97ff33;
+  --header-color:    #97ff33; /* #222831; */
   --body-color:      rgba(255, 255, 255, 0.8); 
-  --aside-color:     rgba(255, 255, 255, 0.8); /* rgba(0, 0, 0, 0.6); */ 
+  --aside-color:     #97ff33; /* rgba(0, 0, 0, 0.6); */ 
   --fig-cap-color:   rgba(255, 255, 255, 0.8);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    Palatino, "Palatino Linotype", Georgia, serif;
@@ -1907,7 +1898,7 @@ html {
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    1.05rem;
-  --heading-color:   #4fe34f;
+  --heading-color:   #97ff33;
   --body-size:       1.1rem;
   --body-color:      rgba(255, 255, 255, 0.8);
   color: rgba(255, 255, 255, 0.8);
@@ -1922,7 +1913,7 @@ d-byline {
 /*-- ARTICLE APPENDIX --*/
 d-appendix {
   --heading-size:    15px;
-  --heading-color:   #4fe34f;
+  --heading-color:   #97ff33;
   --text-size:       0.8em;
   --text-color:      rgba(255, 255, 255, 0.8);
 }
@@ -1932,9 +1923,9 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       1.2em;
-  --text-color:       #4fe34f;
+  --text-color:       #97ff33;
   --text-size:        20px;
-  --hover-color:      white;
+  --hover-color:      #ffb733;
   --bkgd-color:       #070707; /* #30475e */
 }
 
@@ -1943,26 +1934,26 @@ d-appendix {
 }
 
 .distill-site-footer {
-  --text-color:       #4fe34f;
+  --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        13px;
-  --hover-color:      white;
+  --hover-color:      #ffb733;
   --bkgd-color:       #070707;
 }
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 .btn-outline-dark:hover {
-  background-color: #4fe34f;
+  background-color: #ffb733;
 }
 
 .d-title h1 {
   
-  --text-color: #4fe34f;
+  --text-color: #97ff33;
   
 }
 
 a {
-  color: #4fe34f;
+  color: #97ff33;
 }
 
 body {
@@ -1972,13 +1963,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #4fe34f;
+  color: #97ff33;
 }
 
 .btn-outline-dark {
   
   color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: hsla(231, 15%, 18%, 1);
   
 }
 
@@ -1988,9 +1979,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Code", monospace;
 }
 
-.d-article {
-  color: rgba(255, 255, 255, 0.8);
+d-article a {
+  color: #97ff33;
 } 
+
+a:hover {
+  color: #ffb733;
+}
 
 code {
   color: rgba(255, 255, 255, 0.8);
@@ -2428,18 +2423,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom">
-  <h3 id="citation">Citation</h3>
-  <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Yannik (2021, June 13). Y. Buhl: Automated Reporting on Lacking Rainfall in Germany. Retrieved from yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/</pre>
-  <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{yannik2021automated,
-  author = {Yannik, },
-  title = {Y. Buhl: Automated Reporting on Lacking Rainfall in Germany},
-  url = {yannikbuhl.de/posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/},
-  year = {2021}
-}</pre>
-</div>
+<div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">

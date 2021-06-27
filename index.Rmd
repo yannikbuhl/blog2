@@ -2,14 +2,14 @@
 title: "Yannik Buhl"
 image: "images/yannik.jpg"
 links:
-  - label: LinkedIn
-    url: "https://www.linkedin.com/in/yannik-buhl-a29034156"
-  - label: Twitter
+  - label: <img src="images/twitter.png">
     url: "https://twitter.com/YBuhl"
-  - label: GitHub
+  - label: <img src="images/github.png">
     url: "https://github.com/yannikbuhl"
-  - label: Email
+  - label: <img src="images/mail.png">
     url: "mailto:buhl-netlify@posteo.de"
+  - label: <img src="images/linkedin.png">
+    url: "https://www.linkedin.com/in/yannik-buhl-a29034156"
 site: distill::distill_website
 output:
   postcards::trestles
@@ -37,8 +37,8 @@ Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl mein
 
 ##### Quantitative Methoden
 
-- Multivariate Verfahren: 4 / 5
-- Machine Learning: 2 / 5
+- Multivariate Verfahren: 4/5
+- Machine Learning: 2/5
 
 ##### Interessen
 
