@@ -12,6 +12,8 @@ navbar:
       href: index.html
     - text: "Blog"
       href: blog.html
+    - text: "Fotografie"
+      href: https://www.instagram.com/yabuhl/
 output: 
   distill::distill_article:
     toc: true
