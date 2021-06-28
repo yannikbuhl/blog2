@@ -549,7 +549,22 @@
           body {
             background-color: hsla(231, 15%, 18%, 1);
             color: rgba(255, 255, 255, 0.8);
-            font-size: 18px;
+            font-size: 16px;
+            /* text-align: justify; */
+          }
+
+          body p {
+            text-align: justify;
+          }
+
+          .list-group-item-action {
+            background-color: hsla(231, 15%, 18%, 1);
+            border-color: hsla(231, 15%, 18%, 1);
+            color: hsla(231, 15%, 18%, 1);
+          }
+
+          .list-group-item-action:hover {
+            background-color: hsla(231, 15%, 18%, 1);
           }
 
           h1, h2, h3, h4, h5, h6 {
@@ -599,6 +614,16 @@
           .dt-author {
             color: rgba(255, 255, 255, 0.8);
             font-size: 15px;
+          }
+
+          .untertitel1 p {
+            font-size: 19px;
+            text-align: center;
+          }
+
+          .untertitel2 p {
+            font-size: 18px;
+            text-align: center;
           }</style>
           <style type="text/css">
           /* base style */
@@ -791,6 +816,12 @@
             <div class="p-2">
               <h1>Yannik Buhl</h1>
             </div>
+            <div class="untertitel1">
+              <p>Wissenschaftlicher Mitarbeiter</p>
+            </div>
+            <div class="untertitel2">
+              <p>Statistisches Bundesamt</p>
+            </div>
             <hr style="width:60%;"/>
             <div class="p-2">
               <div id="icon-list">
@@ -892,22 +923,22 @@
               <div class="col-8 p-1 text-center">
                 <div class="list-group">
                                     <a href=https://twitter.com/YBuhl>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                   <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <img src="images/twitter.png">
                     </button>
                   </a>
                                     <a href=https://github.com/yannikbuhl>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                   <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <img src="images/github.png">
                     </button>
                   </a>
                                     <a href=mailto:buhl-netlify@posteo.de>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                   <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <img src="images/mail.png">
                     </button>
                   </a>
                                     <a href=https://www.linkedin.com/in/yannik-buhl-a29034156>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                   <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <img src="images/linkedin.png">
                     </button>
                   </a>

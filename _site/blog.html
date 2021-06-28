@@ -1949,7 +1949,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   body {
     background-color: hsla(231, 15%, 18%, 1);
     color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
+    font-size: 16px;
+    /* text-align: justify; */
+  }
+
+  body p {
+    text-align: justify;
+  }
+
+  .list-group-item-action {
+    background-color: hsla(231, 15%, 18%, 1);
+    border-color: hsla(231, 15%, 18%, 1);
+    color: hsla(231, 15%, 18%, 1);
+  }
+
+  .list-group-item-action:hover {
+    background-color: hsla(231, 15%, 18%, 1);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -1999,6 +2014,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .dt-author {
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
+  }
+
+  .untertitel1 p {
+    font-size: 19px;
+    text-align: center;
+  }
+
+  .untertitel2 p {
+    font-size: 18px;
+    text-align: center;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2382,7 +2407,7 @@ function init_posts_list() {
 <div class="description">
 <h2>Scraping Spiegel articles using {newsanchor}</h2>
 <div class="dt-tags"></div>
-<p>One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.</p>
+<p>One convenient use of {newsanchor} is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.</p>
 </div>
 </a>
 <a href="posts/2021-06-23-automatically-filling-a-sqlite-database-using-aws-and-rstudio-server/" class="post-preview">

@@ -1,6 +1,8 @@
 ---
 title: "Yannik Buhl"
 image: "images/yannik.jpg"
+untertitel1: Wissenschaftlicher Mitarbeiter
+untertitel2: Statistisches Bundesamt
 links:
   - label: <img src="images/twitter.png">
     url: "https://twitter.com/YBuhl"

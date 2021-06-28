@@ -88,7 +88,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
 <title>Y. Buhl: Scraping Spiegel articles using {newsanchor}</title>
 
-<meta property="description" itemprop="description" content="One convenient use of **{newsanchor}** is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
+<meta property="description" itemprop="description" content="One convenient use of {newsanchor} is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
 
 <link rel="icon" type="image/png" href="../../images/icon-192.png"/>
 
@@ -100,25 +100,25 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="Y. Buhl: Scraping Spiegel articles using {newsanchor}"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="One convenient use of **{newsanchor}** is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
+<meta property="og:description" content="One convenient use of {newsanchor} is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Y. Buhl"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="Y. Buhl: Scraping Spiegel articles using {newsanchor}"/>
-<meta property="twitter:description" content="One convenient use of **{newsanchor}** is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
+<meta property="twitter:description" content="One convenient use of {newsanchor} is to use it to scrape the articles&#39; content. Our package is of great help because it provides you with the corresponding URLs."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Scraping Spiegel articles using {newsanchor}"]},{"type":"character","attributes":{},"value":["One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["01-27-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Scraping Spiegel articles using {newsanchor}"]},{"type":"character","attributes":{},"value":["One convenient use of {newsanchor} is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["01-27-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["scraping-spiegel-articles-using-newsanchor_files/anchor-4.2.2/anchor.min.js","scraping-spiegel-articles-using-newsanchor_files/bowser-1.9.3/bowser.min.js","scraping-spiegel-articles-using-newsanchor_files/distill-2.2.21/template.v2.js","scraping-spiegel-articles-using-newsanchor_files/header-attrs-2.8/header-attrs.js","scraping-spiegel-articles-using-newsanchor_files/jquery-1.11.3/jquery.min.js","scraping-spiegel-articles-using-newsanchor_files/popper-2.6.0/popper.min.js","scraping-spiegel-articles-using-newsanchor_files/tippy-6.2.7/tippy-bundle.umd.min.js","scraping-spiegel-articles-using-newsanchor_files/tippy-6.2.7/tippy-light-border.css","scraping-spiegel-articles-using-newsanchor_files/tippy-6.2.7/tippy.css","scraping-spiegel-articles-using-newsanchor_files/tippy-6.2.7/tippy.umd.min.js","scraping-spiegel-articles-using-newsanchor_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1960,7 +1960,22 @@ a {
 body {
   background-color: hsla(231, 15%, 18%, 1);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
+  font-size: 16px;
+  /* text-align: justify; */
+}
+
+body p {
+  text-align: justify;
+}
+
+.list-group-item-action {
+  background-color: hsla(231, 15%, 18%, 1);
+  border-color: hsla(231, 15%, 18%, 1);
+  color: hsla(231, 15%, 18%, 1);
+}
+
+.list-group-item-action:hover {
+  background-color: hsla(231, 15%, 18%, 1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2010,6 +2025,16 @@ code {
 .dt-author {
   color: rgba(255, 255, 255, 0.8);
   font-size: 15px;
+}
+
+.untertitel1 p {
+  font-size: 19px;
+  text-align: center;
+}
+
+.untertitel2 p {
+  font-size: 18px;
+  text-align: center;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2187,7 +2212,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Scraping Spiegel articles using {newsanchor}","description":"One convenient use of **{newsanchor}** is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.","authors":[{"author":"Yannik","authorURL":"yannikbuhl.de","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-01-27T00:00:00.000+01:00","citationText":"Yannik, 2020"}
+{"title":"Scraping Spiegel articles using {newsanchor}","description":"One convenient use of {newsanchor} is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.","authors":[{"author":"Yannik","authorURL":"yannikbuhl.de","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-01-27T00:00:00.000+01:00","citationText":"Yannik, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2216,7 +2241,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>Scraping Spiegel articles using {newsanchor}</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>One convenient use of <strong>{newsanchor}</strong> is to use it to scrape the articles’ content. Our package is of great help because it provides you with the corresponding URLs.</p></p>
+<p><p>One convenient use of {newsanchor} is to use it to scrape the articles’ content. Our package is of great help because it provides you with the corresponding URLs.</p></p>
 </div>
 
 <div class="d-byline">
