@@ -6,6 +6,14 @@ output_dir: "_site"
 favicon: images/icon-192.png
 # base_url: yannikbuhl.de
 # citations: false
+twitter:
+  site: "@YBuhl"
+#cookie_consent:
+#  style: simple
+#  type: express
+#  palette: dark
+#  lang: de
+  # cookies_policy: 
 navbar:
   logo:
     image: images/icon-192.png
