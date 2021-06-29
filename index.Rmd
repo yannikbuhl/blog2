@@ -1,6 +1,6 @@
 ---
 title: "Yannik Buhl"
-image: "images/yannik.jpg"
+image: "images/yannik.png"
 untertitel1: Wissenschaftlicher Mitarbeiter
 untertitel2: Statistisches Bundesamt
 links:
