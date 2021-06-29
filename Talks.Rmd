@@ -1,0 +1,16 @@
+---
+title: "Vorträge"
+description: |
+  Eine Reihe von Vorträgen + Folien
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+### Automated Reporting (23.9.2020)
+
+This is a talk about automation in data journalism that I gave at a CorrelAid Open Online Data Meetup in september. My talk was one of three regarding automation and data science. The session was called ‘The lazy data scientist: Automating things feat. R, Python, AWS, and a Raspberry Pi’. Down below, you find slides as well as a link to the YouTube video.
+
+[Slides](talks/automation-aws.pdf) + [Video](https://www.youtube.com/watch?v=tFRNBHqg_ZQ)
+
+
+

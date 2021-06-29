@@ -86,27 +86,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Y. Buhl: Blog</title>
+  <title>Y. Buhl: Vorträge</title>
 
+  <meta property="description" itemprop="description" content="Eine Reihe von Vorträgen + Folien"/>
 
   <link rel="icon" type="image/png" href="images/icon-192.png"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-06-29"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-06-29"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Y. Buhl: Blog"/>
+  <meta property="og:title" content="Y. Buhl: Vorträge"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Eine Reihe von Vorträgen + Folien"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Y. Buhl"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Y. Buhl: Blog"/>
+  <meta property="twitter:title" content="Y. Buhl: Vorträge"/>
+  <meta property="twitter:description" content="Eine Reihe von Vorträgen + Folien"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Blog"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Vorträge"]},{"type":"character","attributes":{},"value":["Eine Reihe von Vorträgen + Folien\n"]},{"type":"character","attributes":{},"value":["2021-06-29"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2195,12 +2201,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Blog","authors":[]}
+{"title":"Vorträge","description":"Eine Reihe von Vorträgen + Folien","authors":[],"publishedDate":"2021-06-29T00:00:00.000+02:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2225,259 +2231,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Blog">Blog</h1>
-<a href="posts/2021-06-13-automated-reporting-on-lacking-rainfall-in-germany/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 13, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Automated Reporting on Lacking Rainfall in Germany</h2>
-<div class="dt-tags"></div>
-<p>Climate change causes severe disturbances in what we used to call a more or less stable climate. Data journalists are, thus, increasingly focusing on quantifying the effects of the climate crisis. This is an example on how to do so.</p>
-</div>
-</a>
-<a href="posts/2021-06-27-covid-19-see-german-shopping-streets-emptying/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 28, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-06-27-covid-19-see-german-shopping-streets-emptying/covid-19-see-german-shopping-streets-emptying_files/figure-html5/plots-1.png"/>
-</div>
-<div class="description">
-<h2>Covid-19 - See German shopping streets emptying</h2>
-<div class="dt-tags"></div>
-<p>The coronavirus is halting public live. Looking at pedestrian data shows how persistently people stay away from German city centres and give an estimate of the situation is for shops in city centres.</p>
-</div>
-</a>
-<a href="posts/2021-06-27-scraping-spiegel-articles-using-newsanchor/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 27, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Scraping Spiegel articles using {newsanchor}</h2>
-<div class="dt-tags"></div>
-<p>One convenient use of {newsanchor} is to use it to scrape the articles' content. Our package is of great help because it provides you with the corresponding URLs.</p>
-</div>
-</a>
-<a href="posts/2021-06-23-automatically-filling-a-sqlite-database-using-aws-and-rstudio-server/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">May 12, 2019</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Automatically filling a SQLite database using AWS and RStudio Server</h2>
-<div class="dt-tags"></div>
-<p>The R script used is a simple parser. To automate it, set up a SQLite database on AWS. The script parses a JSON file and writes it into the database using SQL.</p>
-</div>
-</a>
-<a href="posts/2021-06-22-introducing-the-r-newsanchor-package/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 6, 2019</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Introducing the R {newsanchor} package</h2>
-<div class="dt-tags"></div>
-<p>At CorrelAid, we developed a tool for communication scientists, journalists and data scientists alike. It conveniently helps you to access breaking news and articles from over 30,000 news sources and blogs using newsapi.org.</p>
-</div>
-</a>
-<a href="posts/2021-06-27-voting-behaviour-in-the-2014-scottish-independence-referendum/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 9, 2019</div>
-<div class="dt-authors">
-<div class="dt-author">Yannik</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Voting Behaviour in the 2014 Scottish Independence Referendum</h2>
-<div class="dt-tags"></div>
-<p>I investigated the voting behaviour of the Scottish electorate in the 2014 Scottish independence referendum. More precisely, I was the first attempting to explain voting behaviour in the referendum based on a multivariate quantitative approach.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Blog</h1>
+<h1>Vorträge</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Eine Reihe von Vorträgen + Folien</p></p>
 </div>
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#automated-reporting-23.9.2020">Automated Reporting (23.9.2020)</a></li>
+</ul>
+</nav>
+</div>
+<h3 id="automated-reporting-23.9.2020">Automated Reporting (23.9.2020)</h3>
+<p>This is a talk about automation in data journalism that I gave at a CorrelAid Open Online Data Meetup in september. My talk was one of three regarding automation and data science. The session was called ‘The lazy data scientist: Automating things feat. R, Python, AWS, and a Raspberry Pi’. Down below, you find slides as well as a link to the YouTube video.</p>
+<p><a href="talks/automation-aws.pdf">Slides</a> + <a href="https://www.youtube.com/watch?v=tFRNBHqg_ZQ">Video</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
