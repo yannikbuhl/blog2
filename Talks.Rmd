@@ -6,6 +6,12 @@ date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
+### Telling Stories With Data (26.5.2021)
+
+Data journalism is all about using and presenting data in a way that readers will intuitively understand them. In this event, we will talk about examples of data-driven stories in order to demonstrate how journalists tell stories using data, what the obstacles are to a good data-driven story and what scientists and journalists can learn from each other regarding data storytelling. This is a talk I gave for the [MZES Social Science Data Lab](https://www.mzes.uni-mannheim.de/socialsciencedatalab/).
+
+[Slides](talks/mzes.pdf) + [Video](https://www.youtube.com/watch?v=sTpXgAp-gKk)
+
 ### Automated Reporting (23.9.2020)
 
 This is a talk about automation in data journalism that I gave at a CorrelAid Open Online Data Meetup in september. My talk was one of three regarding automation and data science. The session was called ‘The lazy data scientist: Automating things feat. R, Python, AWS, and a Raspberry Pi’. Down below, you find slides as well as a link to the YouTube video.
