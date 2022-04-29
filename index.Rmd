@@ -19,22 +19,27 @@ output:
  
 ### Biographie
 
-Mein Name ist Yannik Buhl, ich bin Wissenschaftlicher Mitarbeiter beim Statistischen Bundesamt in Wiesbaden, im Bereich Erforschung neuer digitaler Daten. Davor habe ich als Datenjournalist und Wirtschaftsredakteur in Stuttgart gearbeitet.
+Mein Name ist Yannik Buhl, ich bin Wissenschaftlicher Mitarbeiter beim Statistischen Bundesamt in Wiesbaden, im Bereich Erforschung neuer digitaler Daten. Davor habe ich, bis 2021, als Datenjournalist und Wirtschaftsredakteur in Stuttgart gearbeitet.
 
-Mein Interesse gilt hauptsächlich den Schnittstellen zwischen Gesellschaft, Politik und Wirtschaft, speziell zwischen Sozial- und Wirtschaftswissenschaft sowie deren Interaktion mit den Medien. In der Politikwissenschaft gilt meine Leidenschaft dem Zusammenspiel Vergleichender Regierungslehre und Politischer Soziologie/Psychologie – sowie dem politischen System Schottlands. Methodisch interessiere ich mich sehr für die Themen Automatisierung, Umfragedaten und statistische Modellierung.
+Mein Interesse gilt hauptsächlich den Schnittstellen zwischen Gesellschaft, Politik und Wirtschaft, speziell zwischen Sozial- und Wirtschaftswissenschaft sowie deren Interaktion mit den Medien. In der Politikwissenschaft gilt meine Leidenschaft dem Zusammenspiel Vergleichender Regierungslehre und Politischer Soziologie/Psychologie – sowie dem politischen System Schottlands. Methodisch interessiere ich mich sehr für die Themen Automatisierung, Umfragedaten und statistische Modellierung. Zu guter Letzt engagiere ich mich mit Freude bei der Non-Profit-Initiative [CorrelAid](http://www.correlaid.org/) für Datenanalysen zum guten Zweck. 
 
-Zu guter Letzt engagiere ich mich mit Freude bei der Non-Profit-Initiative [CorrelAid](http://www.correlaid.org/) für Datenanalysen zum guten Zweck. Im März 2019 haben wir dort beispielsweise unser erstes Open-Source-Package für R auf CRAN veröffentlicht, das ich mitentwickelt habe: [*{newsanchor}*](https://github.com/CorrelAid/newsanchor) (mehr Infos [hier](https://correlaid.org/blog/newsanchor/)). Im November 2020 ist außerdem auf CRAN das R-Paket [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) hinzugekommen, das ich ebenfalls mitentwickelt habe und das ein Wrapper für die API von [Pocket](https://getpocket.com/) ist.
+Veröffentlichungen und *contributions* auf CRAN & GitHub:
 
-Mein größtes Hobby ist die Landschafts- und Naturfotografie. Eine Auswahl meiner Fotos ist auf meinem [Instagram-Account](https://www.instagram.com/yabuhl/) zu sehen.
+- [*{newsanchor}*](https://github.com/CorrelAid/newsanchor) (mehr Infos [hier](https://correlaid.org/blog/newsanchor/), mit  [CorrelAid](www.correlaid.org)) 
+- [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) (Wrapper für die API von [Pocket](https://getpocket.com/), mit [CorrelAid](www.correlaid.org))
+- [*{hystReet}*](https://github.com/yannikbuhl/hystReet) (Verbesserung einer Funktion)
+- [*{restatis}*](https://github.com/CorrelAid/restatis/) (*work in progress*, mit [CorrelAid](www.correlaid.org))
+- [*{giedata}*]() (*work in progress*)
+- [Gists](https://gist.github.com/yannikbuhl)
 
 ##### Software & Programmieren
 
 - R/R Studio: 4/5
 - Git/GitHub: 3/5
 - Python/Jupyter: 3/5
-- HTML/CSS: 2/5
+- HTML/CSS: 3/5
 - Bash/Linux: 3/5
-- SQL: 2/5
+- SQL: 3/5
 - Sonstiges: Markdown (3/5), Docker (1/5)
 
 ##### Quantitative Methoden
