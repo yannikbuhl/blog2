@@ -29,7 +29,7 @@ Veröffentlichungen und *contributions* auf CRAN & GitHub:
 - [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) (Wrapper für die API von [Pocket](https://getpocket.com/), mit [CorrelAid](www.correlaid.org))
 - [*{hystReet}*](https://github.com/yannikbuhl/hystReet) (Verbesserung einer Funktion)
 - [*{restatis}*](https://github.com/CorrelAid/restatis/) (*work in progress*, mit [CorrelAid](www.correlaid.org))
-- [*{giedata}*]() (*work in progress*)
+- [*{giedata}*](https://github.com/yannikbuhl/giedata) (*work in progress*)
 - [Gists](https://gist.github.com/yannikbuhl)
 
 ##### Software & Programmieren
