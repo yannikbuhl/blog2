@@ -28,8 +28,8 @@ Veröffentlichungen und *contributions* auf CRAN & GitHub:
 - [*{newsanchor}*](https://github.com/CorrelAid/newsanchor) (mehr Infos [hier](https://correlaid.org/blog/newsanchor/), mit  [CorrelAid](www.correlaid.org)) 
 - [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) (Wrapper für die API von [Pocket](https://getpocket.com/), mit [CorrelAid](www.correlaid.org))
 - [*{hystReet}*](https://github.com/yannikbuhl/hystReet) (Verbesserung einer Funktion)
-- [*{restatis}*](https://github.com/CorrelAid/restatis/) (*work in progress*, mit [CorrelAid](www.correlaid.org))
-- [*{giedata}*](https://github.com/yannikbuhl/giedata) (*work in progress*)
+- [*{restatis}*](https://github.com/CorrelAid/restatis/) (*work in progress*, mit [CorrelAid](https://www.correlaid.org))
+- [*{giedata}*](https://github.com/yannikbuhl/giedata) (Version 0.1.0, Juli 2022)
 - [Gists](https://gist.github.com/yannikbuhl)
 
 ##### Software & Programmieren
