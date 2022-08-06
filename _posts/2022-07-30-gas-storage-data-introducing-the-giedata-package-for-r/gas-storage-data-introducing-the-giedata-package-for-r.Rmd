@@ -60,7 +60,7 @@ head(data2)
 
 Note that due to the design of the API the functionality of `get_giedata2()` is - as of yet - a tiny bit complicated: You can specify multiple countries and get the data on the country level. Once you want to get data on companies, you can only specify one country, and all EIC codes provided must be of this country's origin. The same holds for facilities: You can get data for mulitple facilities at once, but the country and company EIC must be of length one.
 
-Case 1: Country + companies
+*Case 1: Country + companies*
 
 ```{r echo=TRUE}
 
@@ -73,7 +73,7 @@ head(data3)
 
 ```
 
-Case 2: Company + facilities
+*Case 2: Company + facilities*
 
 ```{r echo=TRUE}
 
@@ -88,28 +88,3 @@ head(data4)
 ```
 
 Lastly, I hope this package is of use to you and if you have any query or suggestion, do not hesitate and hop [over to Github](https://github.com/yannikbuhl/giedata) and create an issue.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
