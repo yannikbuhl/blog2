@@ -1,0 +1,4 @@
+package     |     date     |     sum     |     diff
+pocketapi     |     2022-10-09 13:43:29     |     6478     |     0
+newsanchor     |     2022-10-09 13:43:29     |     18742     |     0
+giedata     |     2022-10-09 13:43:29     |     531     |     0
