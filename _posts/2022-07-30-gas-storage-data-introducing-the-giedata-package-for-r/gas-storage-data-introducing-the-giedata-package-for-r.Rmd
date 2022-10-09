@@ -1,0 +1,90 @@
+---
+title: "Gas Storage Data: Introducing the {giedata} Package for R"
+description: |
+  With gas storage data gaining increased attention due to the consequences of Russia's war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE).
+author:
+  - name: Yannik
+    url: yannikbuhl.de
+date: 2022-07-30
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+It has not been until Russia's brutal attack on Ukraine in February of 2022 that daily data on gas storage facilities in Europe would be an interesting topic to deal with for a broader public. Yet, in response to the sanctions put in place by the European Union, Russia has reduced the flow of natural gas to EU countries (thereby exploiting their huge dependency on Russian gas, probably for political reasons). In many countries, it is now questionable as to whether the gas storage facilities will hold enough gas to get through winter time.
+
+This is why politicians, journalists, managers and statisticians are now in need for high frequency, reliable data on gas storage facilities. In Europe, they are provided by [Gas Infrastructure Europe (GIE)](https://gie.eu). For their AGSI+/ALSI+ transparency platform they offer an API that provides all available data on gas storage, the most important data being filling level as well as inflow and outflow.
+
+Right after people started searching for gas storage data with the start of the war, GIE changed the architecture of their API fundamentally, introducing pagination and updating most endpoints and parameters. Since there was no pre-existing R package that could work with the new architecture, I decided to write it myself. As a result, `{giedata}` was published on CRAN in July 2022. Here, I want to give a short overview of what it offers:
+
+The first step in a possible workflow would be to fetch the metadata of the available gas storage companies and their facilities in a given region or country. In this example, I will fetch all gas storage companies in Germany including their facilities, using the first of three main functions of the package, `get_gielisting()`:
+
+```{r echo=TRUE}
+
+storage <- giedata::get_gielisting(region = "Europe",
+                                   country = "Germany",
+                                   facilities = TRUE)
+
+head(storage, n = 5)
+
+```
+
+Based on this information, we can then use the function `get_giedata()` to download the data from AGSI+/ALSI+ (ALSI+ for liquefied natural gas is not yet supported for the new API architecture). From the data set above we see that the unique ID (EIC) of the company "astora" is `21X000000001160J`, we can use that now (from the data set above we, too, get the EIC of the storage unit in Rehden):
+
+```{r echo=TRUE}
+
+data <- giedata::get_giedata(country = "DE",
+                             company = "21X000000001160J",
+                             facility = "21Z000000000271O", 
+                             from = "2022-01-01",
+                             to = "2022-01-05")
+
+head(data)
+
+```
+
+The last of three main functions is `get_giedata2()` and is a generalised version of `get_giedata()` that allows you to download data for multiple countries, companies or facilities at once so you do not have to loop over `get_giedata()` yourself:
+
+```{r echo=TRUE}
+
+data2 <- giedata::get_giedata2(countries = c("DE", "NL", "AT"),
+                               date = "2022-07-01")
+
+head(data2)
+
+```
+
+Note that due to the design of the API the functionality of `get_giedata2()` is - as of yet - a tiny bit complicated: You can specify multiple countries and get the data on the country level. Once you want to get data on companies, you can only specify one country, and all EIC codes provided must be of this country's origin. The same holds for facilities: You can get data for mulitple facilities at once, but the country and company EIC must be of length one.
+
+*Case 1: Country + companies*
+
+```{r echo=TRUE}
+
+data3 <- giedata::get_giedata2(countries = "DE",
+                               companies = c("21X000000001160J", 
+                                             "37X0000000000151"),
+                               date = "2022-01-01")
+
+head(data3)
+
+```
+
+*Case 2: Company + facilities*
+
+```{r echo=TRUE}
+
+data4 <- giedata::get_giedata2(countries = "DE",
+                               companies = "21X000000001160J",
+                               facilities = c("21Z000000000271O", 
+                                              "21W0000000001148"),
+                               date = "2022-01-01")
+
+head(data4)
+
+```
+
+Lastly, I hope this package is of use to you and if you have any query or suggestion, do not hesitate and hop [over to Github](https://github.com/yannikbuhl/giedata) and create an issue.
