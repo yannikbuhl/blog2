@@ -50,17 +50,16 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { color: #00769e; background-color: #f1f3f5; }
+  {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #657422; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #00769e; } /* ControlFlow */
+code span.cf { color: #007ba5; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -74,9 +73,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #00769e; } /* Keyword */
+code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #00769e; } /* Other */
+code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -113,7 +112,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <script type="text/json" id="radix-rmarkdown-metadata">
   {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Impressum"]},{"type":"character","attributes":{},"value":["2022-10-09"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
-
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -773,6 +771,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
   }
 
   .figure .caption {
@@ -1604,12 +1606,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
-          $(this).html(fn.shadowRoot.querySelector("sup"))
-          $(this).id = fn.id
-          fn.remove()
-        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1624,31 +1620,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
-
-      // fix footnotes in tables (#411)
-      // replacing broken distill.pub feature
-      $('table d-footnote').each(function() {
-        // we replace internal showAtNode methode which is triggered when hovering a footnote
-        this.hoverBox.showAtNode = function(node) {
-          // ported from https://github.com/distillpub/template/pull/105/files
-          calcOffset = function(elem) {
-              let x = elem.offsetLeft;
-              let y = elem.offsetTop;
-              // Traverse upwards until an `absolute` element is found or `elem`
-              // becomes null.
-              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
-                  x += elem.offsetLeft;
-                  y += elem.offsetTop;
-              }
-
-              return { left: x, top: y };
-          }
-          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
-          const bbox = node.getBoundingClientRect();
-          const offset = calcOffset(node);
-          this.show([offset.left + bbox.width, offset.top + bbox.height]);
-        }
-      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1748,8 +1719,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
-      // ignore leaflet img layers (#106)
-      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1772,7 +1741,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
       });
     }
 
@@ -2243,7 +2212,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <script id="distill-front-matter" type="text/json">
 {"title":"Impressum","authors":[],"publishedDate":"2022-10-09T00:00:00.000+02:00"}
-
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2282,8 +2250,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#impressum-gem.-5-tmg-vwtl.-nach-55-abs.-2-rstv">Impressum
-gem. § 5 TMG &amp; vwtl. nach § 55 Abs. 2 RStV:</a></li>
+<li><a href="#impressum-gem.-5-tmg-vwtl.-nach-55-abs.-2-rstv">Impressum gem. § 5 TMG &amp; vwtl. nach § 55 Abs. 2 RStV:</a></li>
 <li><a href="#externe-bilder-logos">Externe Bilder &amp; Logos</a></li>
 <li><a href="#datenschutz-dsgvo">Datenschutz / DSGVO</a></li>
 <li><a href="#haftung-für-links">Haftung für Links</a></li>
@@ -2291,63 +2258,19 @@ gem. § 5 TMG &amp; vwtl. nach § 55 Abs. 2 RStV:</a></li>
 </ul>
 </nav>
 </div>
-<h3 id="impressum-gem.-5-tmg-vwtl.-nach-55-abs.-2-rstv">Impressum gem. §
-5 TMG &amp; vwtl. nach § 55 Abs. 2 RStV:</h3>
-<p>Yannik Buhl <br> Zietenring 2 <br> 65195 Wiesbaden <br> <a
-href="mailto:buhl-netlify@posteo.de">Kontakt</a></p>
+<h3 id="impressum-gem.-5-tmg-vwtl.-nach-55-abs.-2-rstv">Impressum gem. § 5 TMG &amp; vwtl. nach § 55 Abs. 2 RStV:</h3>
+<p>Yannik Buhl <br> Zietenring 2 <br> 65195 Wiesbaden <br> <a href="mailto:buhl-netlify@posteo.de">Kontakt</a></p>
 <h3 id="externe-bilder-logos">Externe Bilder &amp; Logos</h3>
-<p>Icons by Freepik from Flaticon licensed by <a
-href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a></p>
+<p>Icons by Freepik from Flaticon licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a></p>
 <h3 id="datenschutz-dsgvo">Datenschutz / DSGVO</h3>
-<p>Beim Besuch dieser Homepage werden von mir keine personenbezogen
-Daten verarbeitet oder gespeichert. Diese Homepage wird gehosted bei <a
-href="https://www.netlify.com">Netlify</a>. Netlify speichert nach
-eigenen Angaben lediglich die IP-Adressen der Seitenbesucher für nicht
-mehr als 30 Tage. Mehr Informationen gibt es <a
-href="https://www.netlify.com/gdpr-ccpa/">hier</a>.</p>
-<p>Die Nutzung dieser Webseite ist in der Regel ohne Angabe
-personenbezogener Daten möglich. Soweit auf dieser Seite
-personenbezogene Daten (beispielsweise Name, Anschrift oder
-E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf
-freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche
-Zustimmung nicht an Dritte weitergegeben. Ich weise darauf hin, dass die
-Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
-Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor
-dem Zugriff durch Dritte ist nicht möglich. Der Nutzung von im Rahmen
-der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
-Übersendung von nicht ausdrücklich angeforderter Werbung und
-Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die
-Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im
-Falle der unverlangten Zusendung von Werbeinformationen, etwa durch
-Spam-Mails, vor.</p>
+<p>Beim Besuch dieser Homepage werden von mir keine personenbezogen Daten verarbeitet oder gespeichert. Diese Homepage wird gehosted bei <a href="https://www.netlify.com">Netlify</a>. Netlify speichert nach eigenen Angaben lediglich die IP-Adressen der Seitenbesucher für nicht mehr als 30 Tage. Mehr Informationen gibt es <a href="https://www.netlify.com/gdpr-ccpa/">hier</a>.</p>
+<p>Die Nutzung dieser Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf dieser Seite personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Ich weise darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
 <h3 id="haftung-für-links">Haftung für Links</h3>
-<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
-Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
-Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
-Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
-verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
-Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte
-waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
-inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
-Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden
-von Rechtsverletzungen werden wir derartige Links umgehend
-entfernen.</p>
+<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
 <h3 id="urheberrecht">Urheberrecht</h3>
-<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
-Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
-jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite
-sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden,
-werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
-Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
-Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
-entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
-wir derartige Inhalte umgehend entfernen.</p>
+<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
 <p><em>Impressum von impressum-generator.de</em></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
