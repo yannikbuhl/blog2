@@ -1,0 +1,18 @@
+---
+title: "An Introduction to the {restatis} Package"
+description: |
+  With CorrelAid, we have created and published a R package to easily access the API of Germany's Federal Statistical Office, called {restatis}.
+author:
+  - name: Yannik
+    url: yannikbuhl.de
+date: 2023-07-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+During a [CorrelAid](https://www.correlaid.org/) project, I have helped develop a new R package that helps users of German official statistics to easily access the API of the German Federal Statistical Office (Destatis). The software package mirrors a whole range of functions that the RESTful API (called GENESIS) provides and helps the user through his whole journey, starting with searching for data products, analysing meta data up to automatically downloading tables of data. You can find the package published on [CRAN](https://cran.r-project.org/package=restatis). 
+
+In this blog post I do not want to get into the details on how to use our package. Instead, check out the [vignette](https://cran.r-project.org/web/packages/restatis/vignettes/restatis.html) that we provide with the package. It will guide you through the main functions and show an exemplary user journey. 
+
+Find the API description [here](https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf) (German only). 
