@@ -19,9 +19,9 @@ output:
  
 ### Biographie
 
-Mein Name ist Yannik Buhl, ich bin Wissenschaftlicher Mitarbeiter beim Statistischen Bundesamt in Wiesbaden, im Bereich Erforschung neuer digitaler Daten im Institut für Forschung und Entwicklung in der Bundesstatistik (IFEB). Davor habe ich als Datenjournalist und Wirtschaftsredakteur gearbeitet. Dort arbeite ich vor allem an der Erschließung und Integration neuer Datenquellen in die amtliche Statistik (z.B. Daten von Mobilfunknetzbetreibern). 
+Mein Name ist Yannik Buhl, ich bin Wissenschaftlicher Mitarbeiter beim Statistischen Bundesamt in Wiesbaden, im Bereich Erforschung neuer digitaler Daten im Institut für Forschung und Entwicklung in der Bundesstatistik (IFEB). Dort arbeite ich vor allem an der Erschließung und Integration neuer Datenquellen in die amtliche Statistik (z.B. Daten von Mobilfunknetzbetreibern). Davor habe ich als Datenjournalist und Wirtschaftsredakteur gearbeitet.
 
-Mein Interesse gilt generell der Schnittstelle zwischen Sozial- und Wirtschaftswissenschaft. In der Politikwissenschaft gilt meine Leidenschaft dem Zusammenspiel Vergleichender Regierungslehre und Politischer Soziologie/Psychologie – sowie dem politischen System Schottlands. Methodisch interessiere ich mich für die Themen Automatisierung, Umfragedaten, statistische Modellierung und experimentelle Konjunkturindikatoren. Zu guter Letzt engagiere ich mich seit 2017 mit Freude bei der Non-Profit-Initiative [CorrelAid](http://www.correlaid.org/) für Datenanalysen zum guten Zweck. 
+Mein Interesse gilt der Schnittstelle zwischen Sozial- und Wirtschaftswissenschaften. Darüber hinaus interessiere ich mich für die Themen Automatisierung, statistische Modellierung, Softwareentwicklung und Cybersicherheit. Zu guter Letzt engagiere ich mich seit 2017 mit Freude bei der Non-Profit-Initiative [CorrelAid](http://www.correlaid.org/) für Datenanalysen zum guten Zweck. 
 
 ##### Veröffentlichungen & *contributions*
 
@@ -34,7 +34,7 @@ Mein Interesse gilt generell der Schnittstelle zwischen Sozial- und Wirtschaftsw
 
 ##### Software- & Programmierkenntnisse
 
-R/R Studio (4/5), Git/GitHub (3/5), Python/Jupyter (3/5), HTML/CSS (3/5), Bash/Linux (3/5), SQL (3/5), Markdown (3/5), Docker (1/5)
+R/R Studio (4/5), Git/GitHub (4/5), Python/Jupyter (3/5), HTML/CSS (3/5), Bash/Linux (3/5), SQL (3/5), Markdown (3/5), Docker (1/5)
 
 ##### Quantitative Methoden
 
@@ -42,11 +42,11 @@ Multivariate Verfahren (4/5), Machine Learning (2/5), Big-Data-Verarbeitung (3/5
 
 ##### Interessen
 
-- Datenanalyse, Datenjournalismus
-- IT-Sicherheit
-- Politik, Wirtschaft & Gesellschaft
-- R/RStudio & quantitative Methoden
-- Vergleichende Regierungslehre / Politische Soziologie
+- Datenanalyse / Datenverarbeitung
+- Cybersicherheit
+- R/RStudio & R-Package-Development
+- Quantitative Methoden / Statistische Modellierung
+- Datenjournalismus
 
 ##### Ausbildung
 
