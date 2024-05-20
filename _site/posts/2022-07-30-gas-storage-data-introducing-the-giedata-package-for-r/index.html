@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -88,7 +88,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-<title>Y. Buhl: Gas Storage Data: Introducing the {giedata} Package for R</title>
+<title>Y. Buhl: Gas Storage Data: Introducing the {gie} Package for R</title>
 
 <meta property="description" itemprop="description" content="With gas storage data gaining increased attention due to the consequences of Russia&#39;s war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE)."/>
 
@@ -100,7 +100,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Yannik"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Y. Buhl: Gas Storage Data: Introducing the {giedata} Package for R"/>
+<meta property="og:title" content="Y. Buhl: Gas Storage Data: Introducing the {gie} Package for R"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="With gas storage data gaining increased attention due to the consequences of Russia&#39;s war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE)."/>
 <meta property="og:locale" content="en_US"/>
@@ -108,7 +108,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Y. Buhl: Gas Storage Data: Introducing the {giedata} Package for R"/>
+<meta property="twitter:title" content="Y. Buhl: Gas Storage Data: Introducing the {gie} Package for R"/>
 <meta property="twitter:description" content="With gas storage data gaining increased attention due to the consequences of Russia&#39;s war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE)."/>
 <meta property="twitter:site" content="@YBuhl"/>
 
@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Gas Storage Data: Introducing the {giedata} Package for R"]},{"type":"character","attributes":{},"value":["With gas storage data gaining increased attention due to the consequences of Russia's war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE)."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["2022-07-30"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Gas Storage Data: Introducing the {gie} Package for R"]},{"type":"character","attributes":{},"value":["With gas storage data gaining increased attention due to the consequences of Russia's war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE)."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Yannik"]},{"type":"character","attributes":{},"value":["yannikbuhl.de"]}]}]},{"type":"character","attributes":{},"value":["2022-07-30"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2261,7 +2261,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.27/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2282,7 +2282,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Gas Storage Data: Introducing the {giedata} Package for R","description":"With gas storage data gaining increased attention due to the consequences of Russia's war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE).","authors":[{"author":"Yannik","authorURL":"yannikbuhl.de","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-30T00:00:00.000+02:00","citationText":"Yannik, 2022"}
+{"title":"Gas Storage Data: Introducing the {gie} Package for R","description":"With gas storage data gaining increased attention due to the consequences of Russia's war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE).","authors":[{"author":"Yannik","authorURL":"yannikbuhl.de","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-30T00:00:00.000+02:00","citationText":"Yannik, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2309,12 +2309,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Gas Storage Data: Introducing the {giedata} Package for R</h1>
+<h1>Gas Storage Data: Introducing the {gie} Package for R</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>With gas storage data gaining increased attention due to the
-consequences of Russia’s war against Ukraine, I have written a package
-to access the API of Gas Infrastructure Europe (GIE).</p></p>
+<p><p>With gas storage data gaining increased attention due to the consequences of Russia’s war against Ukraine, I have written a package to access the API of Gas Infrastructure Europe (GIE).</p></p>
 </div>
 
 <div class="d-byline">
@@ -2324,155 +2323,121 @@ to access the API of Gas Infrastructure Europe (GIE).</p></p>
 </div>
 
 <div class="d-article">
-<p>It has not been until Russia’s brutal attack on Ukraine in February
-of 2022 that daily data on gas storage facilities in Europe would be an
-interesting topic to deal with for a broader public. Yet, in response to
-the sanctions put in place by the European Union, Russia has reduced the
-flow of natural gas to EU countries (thereby exploiting their huge
-dependency on Russian gas, probably for political reasons). In many
-countries, it is now questionable as to whether the gas storage
-facilities will hold enough gas to get through winter time.</p>
-<p>This is why politicians, journalists, managers and statisticians are
-now in need for high frequency, reliable data on gas storage facilities.
-In Europe, they are provided by <a href="https://gie.eu">Gas
-Infrastructure Europe (GIE)</a>. For their AGSI+/ALSI+ transparency
-platform they offer an API that provides all available data on gas
-storage, the most important data being filling level as well as inflow
-and outflow.</p>
-<p>Right after people started searching for gas storage data with the
-start of the war, GIE changed the architecture of their API
-fundamentally, introducing pagination and updating most endpoints and
-parameters. Since there was no pre-existing R package that could work
-with the new architecture, I decided to write it myself. As a result,
-<code>{giedata}</code> was published on CRAN in July 2022. Here, I want
-to give a short overview of what it offers:</p>
-<p>The first step in a possible workflow would be to fetch the metadata
-of the available gas storage companies and their facilities in a given
-region or country. In this example, I will fetch all gas storage
-companies in Germany including their facilities, using the first of
-three main functions of the package, <code>get_gielisting()</code>:</p>
+<p>It has not been until Russia’s brutal attack on Ukraine in February of 2022 that daily data on gas storage facilities in Europe would be an interesting topic to deal with for a broader public. Yet, in response to the sanctions put in place by the European Union, Russia has reduced the flow of natural gas to EU countries (thereby exploiting their huge dependency on Russian gas, probably for political reasons). In many countries, it is now questionable as to whether the gas storage facilities will hold enough gas to get through winter time.</p>
+<p>This is why politicians, journalists, managers and statisticians are now in need for high frequency, reliable data on gas storage facilities. In Europe, they are provided by <a href="https://gie.eu">Gas Infrastructure Europe (GIE)</a>. For their AGSI+/ALSI+ transparency platform they offer an API that provides all available data on gas storage, the most important data being filling level as well as inflow and outflow.</p>
+<p>Right after people started searching for gas storage data with the start of the war, GIE changed the architecture of their API fundamentally, introducing pagination and updating most endpoints and parameters. Since there was no pre-existing R package that could work with the new architecture, I decided to write it myself. As a result, <code>{gie}</code> was published on CRAN in July 2022. Here, I want to give a short overview of what it offers:</p>
+<p>The first step in a possible workflow would be to fetch the metadata of the available gas storage companies and their facilities in a given region or country. In this example, I will fetch all gas storage companies in Germany including their facilities, using the first of three main functions of the package, <code>get_gielisting()</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>storage</span> <span class='op'>&lt;-</span> <span class='fu'>giedata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/giedata/man/get_gielisting.html'>get_gielisting</a></span><span class='op'>(</span>region <span class='op'>=</span> <span class='st'>"Europe"</span>,</span>
-<span>                                   country <span class='op'>=</span> <span class='st'>"Germany"</span>,</span>
-<span>                                   facilities <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>storage</span> <span class='op'>&lt;-</span> <span class='fu'>gie</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gie/man/gie_listing.html'>gie_listing</a></span><span class='op'>(</span>region <span class='op'>=</span> <span class='st'>"Europe"</span>,</span>
+<span>                            country <span class='op'>=</span> <span class='st'>"Germany"</span>,</span>
+<span>                            facilities <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>storage</span>, n <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 5 × 9
-  facility_eic     facility_name     facility_type company_eic country
-  &lt;chr&gt;            &lt;chr&gt;             &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;  
-1 21Z000000000271O UGS Rehden        Storage Faci… 21X0000000… Germany
-2 21W0000000001148 UGS Jemgum H (as… Storage Faci… 21X0000000… Germany
-3 21W0000000001261 VSP NORD (Rehden… Storage Group 21X0000000… Germany
-4 21W0000000000184 UGS Wolfersberg   Storage Faci… 37X0000000… Germany
-5 21W0000000001083 UGS Berlin        Storage Faci… 37X0000000… Germany
-# … with 4 more variables: country_code &lt;chr&gt;,
-#   company_shortname &lt;chr&gt;, company_name &lt;chr&gt;, company_url &lt;chr&gt;</code></pre>
+<pre><code># A tibble: 5 × 10
+  facility_eic     facility_name  facility_type operational_start_date
+  &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;                 
+1 21Z000000000271O UGS Rehden     Storage Faci… 2011-01-01            
+2 21W0000000001148 UGS Jemgum H … Storage Faci… 2011-01-01            
+3 21W0000000001261 VSP NORD (Reh… Storage Group 2019-01-01            
+4 21W0000000000184 UGS Wolfersbe… Storage Faci… 2011-01-01            
+5 21W0000000001083 UGS Berlin (d… Storage Faci… 2011-01-01            
+# ℹ 6 more variables: company_eic &lt;chr&gt;, country &lt;chr&gt;,
+#   country_code &lt;chr&gt;, company_shortname &lt;chr&gt;, company_name &lt;chr&gt;,
+#   operational_end_date &lt;chr&gt;</code></pre>
 </div>
-<p>Based on this information, we can then use the function
-<code>get_giedata()</code> to download the data from AGSI+/ALSI+ (ALSI+
-for liquefied natural gas is not yet supported for the new API
-architecture). From the data set above we see that the unique ID (EIC)
-of the company “astora” is <code>21X000000001160J</code>, we can use
-that now (from the data set above we, too, get the EIC of the storage
-unit in Rehden):</p>
+<p>Based on this information, we can then use the function <code>get_gie()</code> to download the data from AGSI+/ALSI+ (ALSI+ for liquefied natural gas is not yet supported for the new API architecture). From the data set above we see that the unique ID (EIC) of the company “astora” is <code>21X000000001160J</code>, we can use that now (from the data set above we, too, get the EIC of the storage unit in Rehden):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>giedata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/giedata/man/get_giedata.html'>get_giedata</a></span><span class='op'>(</span>country <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
-<span>                             company <span class='op'>=</span> <span class='st'>"21X000000001160J"</span>,</span>
-<span>                             facility <span class='op'>=</span> <span class='st'>"21Z000000000271O"</span>, </span>
-<span>                             from <span class='op'>=</span> <span class='st'>"2022-01-01"</span>,</span>
-<span>                             to <span class='op'>=</span> <span class='st'>"2022-01-05"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>gie</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gie/man/gie_load.html'>gie_load</a></span><span class='op'>(</span>country <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
+<span>                      company <span class='op'>=</span> <span class='st'>"21X000000001160J"</span>,</span>
+<span>                      facility <span class='op'>=</span> <span class='st'>"21Z000000000271O"</span>, </span>
+<span>                      from <span class='op'>=</span> <span class='st'>"2022-01-01"</span>,</span>
+<span>                      to <span class='op'>=</span> <span class='st'>"2022-01-05"</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 5 × 13
-  name       code  url   gasDayStart gasInStorage injection withdrawal
-  &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;date&gt;             &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 UGS Rehden 21Z0… 21Z0… 2022-01-01          2.86     229.         0  
-2 UGS Rehden 21Z0… 21Z0… 2022-01-02          3.00     138.         0  
-3 UGS Rehden 21Z0… 21Z0… 2022-01-03          3.08      79.7        0  
-4 UGS Rehden 21Z0… 21Z0… 2022-01-04          3.16      86.1        0  
-5 UGS Rehden 21Z0… 21Z0… 2022-01-05          3.15       0         12.6
-# … with 6 more variables: workingGasVolume &lt;dbl&gt;,
-#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;, status &lt;chr&gt;,
+<pre><code># A tibble: 5 × 20
+  name      code  url   longitude latitude  type updatedAt gasDayStart
+  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;date&gt;     
+1 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-01 
+2 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-02 
+3 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-03 
+4 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-04 
+5 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-05 
+# ℹ 12 more variables: gasInStorage &lt;dbl&gt;, injection &lt;dbl&gt;,
+#   withdrawal &lt;dbl&gt;, netWithdrawal &lt;dbl&gt;, workingGasVolume &lt;dbl&gt;,
+#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;,
+#   contractedCapacity &lt;dbl&gt;, availableCapacity &lt;dbl&gt;, status &lt;chr&gt;,
 #   trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
 </div>
-<p>The last of three main functions is <code>get_giedata2()</code> and
-is a generalised version of <code>get_giedata()</code> that allows you
-to download data for multiple countries, companies or facilities at once
-so you do not have to loop over <code>get_giedata()</code> yourself:</p>
+<p>The last of three main functions is <code>get_gie2()</code> and is a generalised version of <code>get_gie()</code> that allows you to download data for multiple countries, companies or facilities at once so you do not have to loop over <code>get_gie()</code> yourself:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data2</span> <span class='op'>&lt;-</span> <span class='fu'>giedata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/giedata/man/get_giedata2.html'>get_giedata2</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"DE"</span>, <span class='st'>"NL"</span>, <span class='st'>"AT"</span><span class='op'>)</span>,</span>
-<span>                               date <span class='op'>=</span> <span class='st'>"2022-07-01"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data2</span> <span class='op'>&lt;-</span> <span class='fu'>gie</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gie/man/gie_batchload.html'>gie_batchload</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"DE"</span>, <span class='st'>"NL"</span>, <span class='st'>"AT"</span><span class='op'>)</span>,</span>
+<span>                            date <span class='op'>=</span> <span class='st'>"2022-07-01"</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>data2</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 3 × 15
-  name        code  url   gasDayStart gasInStorage consumption
-  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;date&gt;             &lt;dbl&gt;       &lt;dbl&gt;
-1 Germany     DE    DE    2022-07-01         149.        995. 
-2 Netherlands NL    NL    2022-07-01          75.6       420. 
-3 Austria     AT    AT    2022-07-01          43.2        98.1
-# … with 9 more variables: consumptionFull &lt;dbl&gt;, injection &lt;dbl&gt;,
-#   withdrawal &lt;dbl&gt;, workingGasVolume &lt;dbl&gt;,
-#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;, status &lt;chr&gt;,
-#   trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 3 × 20
+  name      code  url   updatedAt gasDayStart gasInStorage consumption
+  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;date&gt;             &lt;dbl&gt;       &lt;dbl&gt;
+1 Germany   DE    DE    2023-12-… 2022-07-01         150.         889.
+2 Netherla… NL    NL    2023-07-… 2022-07-01          75.6        312.
+3 Austria   AT    AT    2022-11-… 2022-07-01          43.2         91 
+# ℹ 13 more variables: consumptionFull &lt;dbl&gt;, injection &lt;dbl&gt;,
+#   withdrawal &lt;dbl&gt;, netWithdrawal &lt;dbl&gt;, workingGasVolume &lt;dbl&gt;,
+#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;,
+#   contractedCapacity &lt;dbl&gt;, availableCapacity &lt;dbl&gt;,
+#   coveredCapacity &lt;dbl&gt;, status &lt;chr&gt;, trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
 </div>
-<p>Note that due to the design of the API the functionality of
-<code>get_giedata2()</code> is - as of yet - a tiny bit complicated: You
-can specify multiple countries and get the data on the country level.
-Once you want to get data on companies, you can only specify one
-country, and all EIC codes provided must be of this country’s origin.
-The same holds for facilities: You can get data for mulitple facilities
-at once, but the country and company EIC must be of length one.</p>
+<p>Note that due to the design of the API the functionality of <code>get_gie2()</code> is - as of yet - a tiny bit complicated: You can specify multiple countries and get the data on the country level. Once you want to get data on companies, you can only specify one country, and all EIC codes provided must be of this country’s origin. The same holds for facilities: You can get data for mulitple facilities at once, but the country and company EIC must be of length one.</p>
 <p><em>Case 1: Country + companies</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data3</span> <span class='op'>&lt;-</span> <span class='fu'>giedata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/giedata/man/get_giedata2.html'>get_giedata2</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
-<span>                               companies <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"21X000000001160J"</span>, </span>
-<span>                                             <span class='st'>"37X0000000000151"</span><span class='op'>)</span>,</span>
-<span>                               date <span class='op'>=</span> <span class='st'>"2022-01-01"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data3</span> <span class='op'>&lt;-</span> <span class='fu'>gie</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gie/man/gie_batchload.html'>gie_batchload</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
+<span>                            companies <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"21X000000001160J"</span>, </span>
+<span>                                          <span class='st'>"37X0000000000151"</span><span class='op'>)</span>,</span>
+<span>                            date <span class='op'>=</span> <span class='st'>"2022-01-01"</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>data3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 2 × 13
-  name       code  url   gasDayStart gasInStorage injection withdrawal
-  &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;date&gt;             &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 astora (G… 21X0… 21X0… 2022-01-01          8.28      241.        0.5
-2 bayernugs  37X0… 37X0… 2022-01-01          1.82        0        10.5
-# … with 6 more variables: workingGasVolume &lt;dbl&gt;,
-#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;, status &lt;chr&gt;,
-#   trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 2 × 19
+  name    code  publication_link transparency_template url   updatedAt
+  &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;                 &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    
+1 astora… 21X0…               NA                    NA 21X0… 2022-01-…
+2 bayern… 37X0…               NA                    NA 37X0… 2022-01-…
+# ℹ 13 more variables: gasDayStart &lt;date&gt;, gasInStorage &lt;dbl&gt;,
+#   injection &lt;dbl&gt;, withdrawal &lt;dbl&gt;, netWithdrawal &lt;dbl&gt;,
+#   workingGasVolume &lt;dbl&gt;, injectionCapacity &lt;dbl&gt;,
+#   withdrawalCapacity &lt;dbl&gt;, contractedCapacity &lt;dbl&gt;,
+#   availableCapacity &lt;dbl&gt;, status &lt;chr&gt;, trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
 </div>
 <p><em>Case 2: Company + facilities</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data4</span> <span class='op'>&lt;-</span> <span class='fu'>giedata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/giedata/man/get_giedata2.html'>get_giedata2</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
-<span>                               companies <span class='op'>=</span> <span class='st'>"21X000000001160J"</span>,</span>
-<span>                               facilities <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"21Z000000000271O"</span>, </span>
-<span>                                              <span class='st'>"21W0000000001148"</span><span class='op'>)</span>,</span>
-<span>                               date <span class='op'>=</span> <span class='st'>"2022-01-01"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>data4</span> <span class='op'>&lt;-</span> <span class='fu'>gie</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/gie/man/gie_batchload.html'>gie_batchload</a></span><span class='op'>(</span>countries <span class='op'>=</span> <span class='st'>"DE"</span>,</span>
+<span>                            companies <span class='op'>=</span> <span class='st'>"21X000000001160J"</span>,</span>
+<span>                            facilities <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"21Z000000000271O"</span>, </span>
+<span>                                           <span class='st'>"21W0000000001148"</span><span class='op'>)</span>,</span>
+<span>                            date <span class='op'>=</span> <span class='st'>"2022-01-01"</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>data4</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 2 × 13
-  name       code  url   gasDayStart gasInStorage injection withdrawal
-  &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;date&gt;             &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 UGS Rehden 21Z0… 21Z0… 2022-01-01          2.86     229.         0  
-2 UGS Jemgu… 21W0… 21W0… 2022-01-01          5.42      11.5        0.5
-# … with 6 more variables: workingGasVolume &lt;dbl&gt;,
-#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;, status &lt;chr&gt;,
+<pre><code># A tibble: 2 × 20
+  name      code  url   longitude latitude  type updatedAt gasDayStart
+  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;date&gt;     
+1 UGS Rehd… 21Z0… 21Z0…      8.49     52.6    NA 2022-01-… 2022-01-01 
+2 UGS Jemg… 21W0… 21W0…      7.28     53.3    NA 2022-01-… 2022-01-01 
+# ℹ 12 more variables: gasInStorage &lt;dbl&gt;, injection &lt;dbl&gt;,
+#   withdrawal &lt;dbl&gt;, netWithdrawal &lt;dbl&gt;, workingGasVolume &lt;dbl&gt;,
+#   injectionCapacity &lt;dbl&gt;, withdrawalCapacity &lt;dbl&gt;,
+#   contractedCapacity &lt;dbl&gt;, availableCapacity &lt;dbl&gt;, status &lt;chr&gt;,
 #   trend &lt;dbl&gt;, full &lt;dbl&gt;</code></pre>
 </div>
-<p>Lastly, I hope this package is of use to you and if you have any
-query or suggestion, do not hesitate and hop <a
-href="https://github.com/yannikbuhl/giedata">over to Github</a> and
-create an issue.</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Lastly, I hope this package is of use to you and if you have any query or suggestion, do not hesitate and hop <a href="https://github.com/yannikbuhl/gie">over to Github</a> and create an issue.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

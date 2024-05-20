@@ -29,7 +29,7 @@ Mein Interesse gilt der Schnittstelle zwischen Sozial- und Wirtschaftswissenscha
 - [*{pocketapi}*](https://github.com/CorrelAid/pocketapi) (Wrapper für die API von [Pocket](https://getpocket.com/), mit [CorrelAid](www.correlaid.org))
 - [*{hystReet}*](https://github.com/yannikbuhl/hystReet) (Hilfe beim Maintaining)
 - [*{restatis}*](https://github.com/CorrelAid/restatis/) (Wrapper für die API der GENESIS-Datenbank von Destatis, Version 0.1.0, Juli 2023, mit [CorrelAid](https://www.correlaid.org))
-- [*{giedata}*](https://github.com/yannikbuhl/giedata) (Wrapper für die API von www.gie.eu (Erdgasspeicher in Europa), Version 0.1.0, Juli 2022)
+- [*{gie}*](https://github.com/yannikbuhl/gie) (Wrapper für die API von www.gie.eu (Erdgasspeicher in Europa), Version 0.1.1, Februar 2024)
 - [Gists](https://gist.github.com/yannikbuhl)
 
 ##### Software- & Programmierkenntnisse
